@@ -1,0 +1,51 @@
+<main id="welcome">
+  <div id="landing" class="landing">
+    <div class="cover"></div>
+    <div id="welcome" class="welcome">
+      <h1>mom to mom</h1>
+      <p id="subtitle" class="subtitle">Ramps PBR&B vegan distillery, tote bag venmo tbh snackwave live-edge tattooed asymmetrical brunch vape. Vaporware fingerstache asymmetrical, dreamcatcher pok pok ennui banh mi bespoke hella sartorial tumblr. </p>
+      <%= link_to "Join us", '#newsletter', class: "btn btn-joinus", id: "btn" %>
+    </div>
+  </div>
+  <div id="featuers" class="features">
+    <div id="box" class="box">
+      <%= image_tag('svg/conversation.svg') %>
+      <h3>New connections</h3>
+      <p>Crucifix vaporware health goth, vexillologist hoodie tacos authentic next level kale chips coloring book vegan quinoa small batch ennui. </p>
+    </div>
+    <div id="box" class="box">
+      <%= image_tag('svg/meetings.svg') %>
+      <h3>Great meetings</h3>
+      <p>Prism skateboard direct trade, microdosing cliche cornhole marfa fanny pack activated charcoal hexagon austin jianbing scenester semiotics brooklyn. </p>
+    </div>
+    <div id="box" class="box">
+      <%= image_tag('svg/rating.svg') %>
+      <h3>Rating</h3>
+      <p>Before they subway tile messenger bag, sriracha cred banjo williamsburg umami authentic ennui slow-carb lomo.</p>
+    </div>
+  </div>
+  <div id="newsletter" class="newsletter">
+    <h1>Join our community</h1>
+    <p>litz synth craft beer hoodie, air plant slow-carb vape mumblecore etsy. Ugh sriracha poutine shabby chic semiotics. Poutine williamsburg iceland, la croix intelligentsia listicle slow-carb. </p>
+    <% # Replace this form with proper one, this won't work %>
+    <%= form_tag do %>
+      <%= text_field_tag :email, nil, placeholder: 'Type your email here' %>
+      <%= submit_tag "Join us" %>
+    <% end %>
+  </div>
+  <div id="app-user" class="app-user">
+    <div id="stats" class="stats">
+      <div id="total" class="total">Total users number: <span>100 443 021</span></div>
+      <div id="in-town" class="in-town">Users in your town: <span>8 231</span></div>
+    </div>
+    <div id="wrapper" class="wrapper">
+      <div id="desc" class="desc">
+      <h1>People nearby</h1>
+      <p>Ramps vegan distillery, tote bag venmo tbh snackwave live-edge tattooed asymmetrical brunch vape. Vaporware fingerstache asymmetrical, dreamcatcher pok pok ennui banh mi bespoke hella sartorial tumblr. Crucifix vaporware health goth, vexillologist hoodie tacos authentic next level kale chips coloring book vegan quinoa small batch ennui. Prism skateboard direct trade, microdosing cliche cornhole marfa fanny pack activated charcoal hexagon austin jianbing scenester semiotics brooklyn. Before they sold out subway tile messenger bag, sriracha cred banjo williamsburg umami authentic ennui slow-carb lomo.</p>
+      </div>
+      <div id="map" class="map">
+      <%= image_tag('http://photos.state.gov/libraries/171414/4cms/ait-taipei-main-office-400x400.jpg') %>
+      </div>
+    </div>
+  </div>
+</main>
