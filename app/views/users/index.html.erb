@@ -28,9 +28,9 @@
     <h1>Join our community</h1>
     <p>litz synth craft beer hoodie, air plant slow-carb vape mumblecore etsy. Ugh sriracha poutine shabby chic semiotics. Poutine williamsburg iceland, la croix intelligentsia listicle slow-carb. </p>
     <% # Replace this form with proper one, this won't work %>
-    <%= form_tag do %>
-      <%= text_field_tag :email, nil, placeholder: 'Type your email here' %>
-      <%= submit_tag "Join us" %>
+    <%= form_for :newsletter, :url => create_path do |f| %>
+      <%= f.email_field :email, placeholder: 'Type your email here' %>
+      <%= f.submit "Join us" %>
     <% end %>
   </div>
   <div id="app-user" class="app-user">
