@@ -10,17 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607035619) do
+ActiveRecord::Schema.define(version: 20170614065657) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "city"
     t.string   "street"
+    t.integer  "home_number"
     t.string   "post_code"
     t.string   "country"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "image_link"
+    t.text     "image_description"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "newsletters", force: :cascade do |t|
@@ -32,10 +40,9 @@ ActiveRecord::Schema.define(version: 20170607035619) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "addres"
-    t.string   "photo_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "password"
   end
 
 end
