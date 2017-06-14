@@ -1,0 +1,27 @@
+<div id="reg-form" class="reg-form">
+    <% if @user.errors.any? %>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  <h1>Register form</h1>
+<%= form_for @user do |f| %>
+  <%= f.text_field :name, :placeholder => "Full name", :required => true %>
+  <%= f.text_field :email, :placeholder => "Email", :required => true %>
+  <%= f.password_field :password, :placeholder => "Password", :required => true %>
+  <%= f.fields_for :address do |a| %>
+    <%= a.text_field :city, :placeholder => "City", :required => true%>
+    <%= a.text_field :street, :placeholder => "Street name" %>
+    <%= a.number_field :home_number, :placeholder => "Local number", :min => 0 %>
+    <%= a.text_field :post_code, :placeholder => "Post code" %>
+    <%= a.text_field :country, :placeholder => "Country" %>
+  <% end %>
+  <%= f.fields_for :images do |i| %>
+    <%= i.text_field :image_link, :placeholder => "Image link" %>
+    <%= i.text_field :image_description, :placeholder => "Image description" %>
+  <% end %>
+  <%= f.submit :value=>"Join us" %>
+<% end %>
+</div>
