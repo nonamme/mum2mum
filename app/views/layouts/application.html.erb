@@ -17,7 +17,8 @@
       <div id="error" class="error"> <%= flash[:error] %> </div>
     <% end %>
     </div>
-    <%= render 'partials/menu' %>
+    <%= render 'partials/menu' if session[:id] == nil %>
+    <%= render 'partials/loged_user_menu' if session[:id] != nil %>
     <%= yield %>
     <%= render 'partials/foot' %>
   </body>

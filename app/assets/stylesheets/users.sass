@@ -159,7 +159,8 @@ html, body
       .desc,
       .map
         flex: 1
-  #reg-form.reg-form
+  #reg-form.reg-form,
+  #login-form.login-form
     position: relative
     top: 100px
     z-index: 3
@@ -180,7 +181,8 @@ html, body
         color: $light-grey
         &[type='text'],
         &[type='password'],
-        &[type='number']
+        &[type='number'],
+        &[type='email']
           width: 95%
           padding: 20px 15px
           background-color: rgba(#000, .3) 

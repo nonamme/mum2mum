@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged, :only => [:index, :new, :login]
+
   def index
   end
 
@@ -11,10 +13,19 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params) 
     if @user.save
-      display_success_message_redirect_root
+      success_register_message_redirect_root
     else
-      display_failed_message_redirect_root
+      failed_register_message_render_new
     end
+  end
+
+  def error
+    flash[:notice] = "No such a path"
+    redirect_to root_path
+  end
+
+  def home
+    @user = User.find_by :id => session[:id]
   end
 
   private
@@ -24,13 +35,20 @@ class UsersController < ApplicationController
                                    address_attributes: [:city, :street, :home_number, :post_code, :country])
     end
 
-    def display_success_message_redirect_root
+    def success_register_message_redirect_root
       flash[:notice] = "Registered successfully!"
       redirect_to root_path
     end
 
-    def display_failed_message_redirect_root
+    def failed_register_message_render_new
       flash[:error] = "You can not register yourself right now! Sorry."
       render 'new'
+    end
+
+  
+    def logged
+      if session[:id] != nil
+        redirect_to users_home_path
+      end
     end
 end
