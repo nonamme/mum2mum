@@ -1,21 +1,35 @@
+$dark-blue: rgba(41, 128, 185,1.0)
+$light-blue: rgba(52, 152, 219,1.0)
+$lighter-blue: rgba(137, 196, 244, 1.0)
+
 nav
   font-size: .8rem
   text-align: right
-  background-color:  rgba(44, 62, 80, .75)
-  border-bottom: 3px solid rgb(44, 62, 80)
+  background-color:  rgba($light-blue, .75)
+  border-bottom: 3px solid $light-blue
   position: fixed 
   top: 0
   left: 0
   right: 0
   z-index: 4
   a
-    color: #95A5A6
+    align-self: center
+    color: $lighter-blue
+    max-width: 90px
     font-weight: bold
-    display: inline-block
     text-decoration: none
-    padding: 10px 15px
+    text-align: center
+    margin: 10px 15px
     &:hover
-      background-color: #34495E
+      text-decoration: underline
   #container
+    display: flex
     max-width: 1200px
     margin: 0 auto
+    & * 
+      flex: 1
+    & div:first-child
+      text-align: left
+    #wrapper.wrapper
+      display: flex
+      justify-content: flex-end

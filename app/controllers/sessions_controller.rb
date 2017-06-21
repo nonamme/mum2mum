@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   private
     def success_login
       flash[:notice] = "Successfully logged in"
-      redirect_to users_home_path
+      redirect_to home_path
     end
 
     def failed_login

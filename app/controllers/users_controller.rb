@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   
     def logged
       if session[:id] != nil
-        redirect_to users_home_path
+        redirect_to home_path
       end
     end
 end
