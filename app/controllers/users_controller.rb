@@ -26,6 +26,17 @@ class UsersController < ApplicationController
     @user = User.find_by :id => session[:id]
   end
 
+  def update
+   @user = User.find(params[:id]) 
+   if @user.update_attributes(user_params)
+     flash[:notice] = "Updated successfully!"
+     redirect_to home_path
+   else
+     flash[:error] = "Can not update data. Sorry, try again later."
+     redirect_to home_path
+   end
+  end
+
   private
     def user_params
       params.require(:user).permit(:name, :email, :password,
