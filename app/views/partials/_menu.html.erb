@@ -1,7 +1,10 @@
 <nav>
   <div id="container" class="container">
-    <%= link_to "Home", root_path %>
-    <%= link_to "Register" %>
-    <%= link_to "Login" %>
+  <div id="logo" class="logo">M2M</div>
+    <div id="wrapper" class="wrapper">
+      <%= link_to "Główna", root_path %>
+      <%= link_to "Zarejestruj się", new_user_path %>
+      <%= link_to "Zaloguj się", login_path %>
+    </div>
   </div>
 </nav>

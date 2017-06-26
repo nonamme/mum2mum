@@ -1,0 +1,26 @@
+<div id="errors" class="errors">
+<% if @user.errors.any? %>
+  <ul>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+</div>
+<div id="reg-form" class="reg-form">
+<h1>Register form</h1>
+<p>Pola wymagane "pelne imie", "email", "haslo" oraz "miasto". Reszta pol nie jest wymagana, jednakze, aby moc korzystac jak najlepiej z naszego serwisu wypelnij wszystkie. Pomoze nam to w znajdowaniu dla ciebie dokladnijszych informacji.</p>
+<%= form_for @user do |f| %>
+  <%= f.text_field :name, :placeholder => "Imię i nazwisko (Wymagane)", :required => true %>
+  <%= f.text_field :email, :placeholder => "Email (Wymagane)", :required => true %>
+  <%= f.password_field :password, :placeholder => "Hasło (Wymagane)", :required => true %>
+    <%= f.fields_for :address do |a| %>
+      <%= a.text_field :city, :placeholder => "Miasto (Wymagane)", :required => true%>
+      <%= a.text_field :street, :placeholder => "Nazwa ulicy" %>
+      <%= a.number_field :home_number, :placeholder => "Numer mieszkania", :min => 0 %>
+      <%= a.text_field :post_code, :placeholder => "Kod pocztowy" %>
+      <%= a.text_field :country, value: "United Kingdom", :placeholder => "Państwo" %>
+    <% end %>
+  <%= f.submit :value=>"Dołącz do nas" %>
+<% end %>
+</div>
