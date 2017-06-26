@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
   before_action :logged, :only => [:index, :new, :login]
-
+  before_action :getUsersLocations, :only => [:index, :home]
   def index
   end
 
   def new
     @user = User.new
-    @user.build_address
-    @user.images.build
   end
 
   def create
@@ -49,6 +47,14 @@ class UsersController < ApplicationController
     def logged
       if session[:id] != nil
         redirect_to home_path
+      end
+    end
+
+    def getUsersLocations
+    @users = Address.all
+      @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+        marker.lat user.latitude
+        marker.lng user.longitude
       end
     end
 end
