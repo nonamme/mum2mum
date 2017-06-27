@@ -14,13 +14,13 @@
   <%= f.text_field :name, :placeholder => "Imię i nazwisko (Wymagane)", :required => true %>
   <%= f.text_field :email, :placeholder => "Email (Wymagane)", :required => true %>
   <%= f.password_field :password, :placeholder => "Hasło (Wymagane)", :required => true %>
-    <%= f.fields_for :address do |a| %>
-      <%= a.text_field :city, :placeholder => "Miasto (Wymagane)", :required => true%>
-      <%= a.text_field :street, :placeholder => "Nazwa ulicy" %>
-      <%= a.number_field :home_number, :placeholder => "Numer mieszkania", :min => 0 %>
-      <%= a.text_field :post_code, :placeholder => "Kod pocztowy" %>
-      <%= a.text_field :country, value: "United Kingdom", :placeholder => "Państwo" %>
-    <% end %>
+  <%= f.fields_for :address, Address.new do |a| %>
+    <%= a.text_field :city, :placeholder => "Miasto (Wymagane)", :required => true %>
+    <%= a.text_field :street, :placeholder => "Nazwa ulicy" %>
+    <%= a.number_field :home_number, :placeholder => "Numer mieszkania", :min => 0 %>
+    <%= a.text_field :post_code, :placeholder => "Kod pocztowy" %>
+    <%= a.text_field :country, value: "United Kingdom", :placeholder => "Państwo" %>
+  <% end %>
   <%= f.submit :value=>"Dołącz do nas" %>
 <% end %>
 </div>

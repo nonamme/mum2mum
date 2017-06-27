@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.string :address_id
+      t.string :address_id, foreign_key: true
       t.string :photo_id
 
       t.timestamps
