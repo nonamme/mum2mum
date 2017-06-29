@@ -58,8 +58,11 @@ GEM
     erubis (2.7.0)
     eventmachine (1.2.3)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.18)
     formatador (0.2.5)
+    geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     guard (2.14.1)
@@ -213,6 +216,8 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
+  faker
+  geocoder
   guard
   guard-livereload
   jbuilder (~> 2.5)
