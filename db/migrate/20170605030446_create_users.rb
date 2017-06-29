@@ -3,11 +3,12 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.string :address_id, foreign_key: true
-      t.string :photo_id
-
+      t.string :password
       t.timestamps
     end
+
+    add_foreign_key :users, :addresses
+    add_index :users, :id
   end
 
   def down
