@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623033811) do
+ActiveRecord::Schema.define(version: 20170613035517) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "city"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20170623033811) do
     t.string   "country"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "user_id"
+    t.index ["id"], name: "index_addresses_on_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -32,6 +33,8 @@ ActiveRecord::Schema.define(version: 20170623033811) do
     t.text     "image_description"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.index ["id"], name: "index_images_on_id"
+    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
   create_table "newsletters", force: :cascade do |t|
@@ -43,11 +46,10 @@ ActiveRecord::Schema.define(version: 20170623033811) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "password"
-    t.integer  "address_id"
-    t.index ["address_id"], name: "index_users_on_address_id"
+    t.index ["id"], name: "index_users_on_id"
   end
 
 end

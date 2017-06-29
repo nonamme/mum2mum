@@ -8,9 +8,15 @@ class CreateAddresses < ActiveRecord::Migration[5.0]
       t.string :country
       t.float :latitude
       t.float :longitude
+      t.integer :user_id
 
       t.timestamps
     end
+
+    add_foreign_key :addresses, :users
+
+    add_index :addresses, :user_id
+    add_index :addresses, :id
   end
 
   def down
