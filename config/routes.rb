@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'moms/nearby'
+
   get 'sessions/new'
   post 'sessions/create'
   get 'sessions/destroy'
