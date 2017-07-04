@@ -62,10 +62,10 @@ class UsersController < ApplicationController
     end
 
     def getUsersLocations
-      @users = Address.all
-      @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-        marker.lat user.latitude
-        marker.lng user.longitude
+      @addresses = Address.all
+      @hash = Gmaps4rails.build_markers(@addresses) do |address, marker|
+        marker.lat address.latitude
+        marker.lng address.longitude
       end
     end
 end

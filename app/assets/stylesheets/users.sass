@@ -314,7 +314,28 @@ body
       #map
         width: 100%
         height: 100%
-
+    #mums-list.mums-list
+      display: flex
+      flex-wrap: wrap
+      li
+        min-width: 300px
+        max-width: 500px
+        width: 300px
+        border: none
+        display: flex
+        img
+          margin-right: 10px
+          width: 64px
+          height: 64px
+          border-radius: 50%
+        a#view-profile
+          color: $dark-blue
+        a#comment-profile
+          color: $lighter-blue 
+        div#profile.profile
+          h3
+            margin: 10px 0 5px
+            font-size: 1rem
 #errors.errors
   position: absolute
   z-index: 999999
@@ -331,3 +352,5 @@ body
   font-family: "Lovers Quarrel"
   font-size: 3.0rem
   color: #fff
+
+

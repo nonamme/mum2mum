@@ -9,4 +9,8 @@ class MomsController < ApplicationController
       marker.lng user.longitude
     end
   end
+
+  def listAllMums
+    @mums = User.all
+  end
 end

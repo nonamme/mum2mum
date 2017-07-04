@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'moms/nearby'
+  get 'moms/listAllMums', as: 'all'
 
   get 'sessions/new'
   post 'sessions/create'
