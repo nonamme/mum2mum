@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700')
 @import url('https://fonts.googleapis.com/css?family=Alex+Brush|Arizonia|Damion|Lovers+Quarrel|Mrs+Saint+Delafield|Sacramento|Tangerine:400,700')
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&subset=latin-ext')
 $dark-blue: rgba(41, 128, 185,1.0)
 $light-blue: rgba(52, 152, 219,1.0)
 $lighter-blue: rgba(137, 196, 244, 1.0)
 html
   height: 100%
-  box-sizing: border-box
 body
   display: flex
   flex-direction: column
@@ -286,10 +285,10 @@ body
         background-image: image-url("svg/arrows.svg")
       li#log-out:before
         background-image: image-url("svg/logout.svg")
-  #dashboard
+  #dashboard,
+  #profile-board
     position: relative
     flex: 7
-    & *
     #data.data
       display: inline-block
       margin: 25px 10px
@@ -336,6 +335,92 @@ body
           h3
             margin: 10px 0 5px
             font-size: 1rem
+  #profile-board.profile-board
+    #profile-data.profile-data
+      max-width: 90%
+      margin: 0 auto
+      display: flex
+      padding: 50px 20px
+      box-shadow: 1px 1px 3px #333
+      #image-container
+        max-width: 200px
+        margin-right: 20px
+        img
+          width: 100%
+      #user-data-container
+        display: flex
+        width: 100%
+        justify-content: space-between
+        h1
+          margin: 0
+        #social-media.social-media
+          align-self: center
+          padding: 0 150px 0 0
+          a
+            color: $dark-blue
+    #main-content.main-content
+      margin: 10px auto
+      max-width: 90%
+      box-shadow: 1px 1px 3px #333
+      padding: 80px 20px
+      display: flex
+      justify-content: space-between
+      #events,
+      #upcoming
+        h3
+          margin: 0 20px 10px
+        li
+          position: relative
+          border: none
+          padding: 15px 21px
+          margin: 24px 0
+          span
+            position: absolute
+            top: 35px
+            left: 23px
+            font-size: 1rem
+    #comments.comments
+      margin: 10px auto
+      max-width: 90%
+      box-shadow: 1px 1px 3px #333
+      padding: 20px
+      #comments-container.comments-container
+        display: flex
+        flex-wrap: wrap
+        #comment.comment
+          flex: 1
+          margin-right: 20px
+          max-width: 300px
+          min-width: 250px
+          max-height: 500px
+          overflow: hidden
+          text-overflow: ellipsis
+          p
+            font-size: .8rem
+            font-family: 'Open Sans'
+            text-align: justify
+            &:first-child
+              font-weight: bold
+      #form-comment-container.form-comment-container
+        border-top: 1px solid #ddd
+        margin-top: 30px
+        padding-top: 50px
+        form
+          width: 500px
+          margin: 0 auto
+          textarea
+            box-sizing: border-box
+            width: 100%
+            height: 100px
+            resize: none 
+            border: 1px solid #ddd
+            padding: 5px 6px
+          input
+            border: none
+            padding: 10px 15px
+            color: #fff
+            width: 500px
+            background-color: $light-blue
 #errors.errors
   position: absolute
   z-index: 999999
@@ -352,5 +437,3 @@ body
   font-family: "Lovers Quarrel"
   font-size: 3.0rem
   color: #fff
-
-

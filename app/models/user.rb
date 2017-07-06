@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :images
   has_one :address
 
+  has_many :comments
+
   accepts_nested_attributes_for :images, :address
 
   validates :name, presence: true, length: { minimum: 3 }

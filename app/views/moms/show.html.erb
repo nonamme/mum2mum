@@ -1,0 +1,67 @@
+<div id="welcome-board" class="welcome-board">
+  <aside id="left-side-menu" class="left-side-menu">
+      <%= render 'partials/side_menu' %>
+  </aside>
+  <div id="profile-board" class="profile-board">
+    <div id="profile-data" class="profile-data">
+      <div id="image-container" class="image-container">
+        <%= image_tag "https://image.tmdb.org/t/p/original/lBXifSLzs1DuspaWkACjSfjlwbd.jpg" %>
+      </div>
+      <div id="user-data-container" class="user-data-container">
+        <div id="address" class="address">
+          <h1><%= @user.name %></h1>
+          <p>Miasto: <%= @user.address.city %></p>
+          <p>Address: <%= @user.address.home_number %>
+          <%= @user.address.street %></p>
+          <p>Kod pocztowy: <%= @user.address.post_code %></p>
+          <p>Email: <%= @user.email %></p>
+        </div>
+        <div id="social-media" class="social-media">
+          <p>Facebook: <%= link_to @user.name, "https://www.facebook.com/kamilewandowski" %></p>
+          <p>Twitter: <%= link_to @user.name, "https://twitter.com/farnaofficial" %></p>
+          <p>Instagram: <%= link_to @user.name, "https://www.instagram.com/ewa_farna93/" %></p>
+        </div>
+      </div>
+    </div>
+    <div id="main-content" class="main-content">
+      <div id="events" class="events">
+        <h3>Wydarzenia w których uczestniczyła:</h3>
+        <ul>
+          <li>Christmas Event 2016 <span>Norwich, Avenue St. NR4 3PP</span></li>
+          <li>Metalica concert on Liverpool Stadion<span>Norwich, Avenue St. NR4 3PP</span></li>
+          <li>Pub Kings&Queens<span>Norwich, Avenue St. NR4 3PP</span></li>
+          <li>Bill Murphy Stand-UP<span>Norwich, Avenue St. NR4 3PP</span></li>
+        </ul>
+      </div>
+      <div id="upcoming" class="upcoming">
+        <h3>Nadchodzące wydarzenia którymi jest zainteresowana:</h3>
+        <ul>
+          <li>Christmas Event 2016 in Norwich<span>Norwich, Avenue St. NR4 3PP</span></li>
+          <li>Metalica concert on Liverpool Stadion<span>Norwich, Avenue St. NR4 3PP</span></li>
+          <li>Pub Kings&Queens<span>Norwich, Avenue St. NR4 3PP</span></li>
+          <li>Bill Murphy Stand-UP<span>Norwich, Avenue St. NR4 3PP</span></li>
+        </ul>
+      </div>
+
+    </div>
+    <div id="comments" class="comments">
+      <h3>Comments:</h3>
+      <div id="comments-container" class="comments-container">
+        <% @comments.each do |c| %>
+        <div id="comment" class="comment">
+          <p><%= c.user.name %> <span id="date" class="date"><%= c.created_at %></p>
+          <p><%= c.comment %></p>
+        </div>
+        <% end %>
+      </div>
+      <div id="form-comment-container" class="form-comment-container">
+        <%= form_for :comment, url: comment_path do |f| %>
+          <%= f.hidden_field :commenter_id, value: @user.id %>
+          <%= f.hidden_field :user_id, value: session[:id] %>
+          <%= f.text_area :comment %>
+          <%= f.submit "Comment" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
