@@ -3,7 +3,7 @@
   <head>
     <title>M2M</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAItQXA7a3VvCT7aWhXznumwM21XERS_B4"></script>
 <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
@@ -22,7 +22,7 @@
     <%= render 'partials/menu' if session[:id] == nil %>
     <%= yield %>
     <%= render 'partials/foot' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
    handler = Gmaps.build('Google');
    handler.buildMap({ provider: { 
@@ -33,7 +33,7 @@
      center: { lat: 54.0000, lng: -2.0000 },
      mapTypeId: 'roadmap'
    }, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(<%=raw @hash.to_json %>);
+     markers = handler.addMarkers(<%=raw @hash.to_json %>);
       handler.bounds.extendWith(markers);
     }); 
   </script>
