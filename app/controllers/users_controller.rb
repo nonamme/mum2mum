@@ -24,11 +24,16 @@ class UsersController < ApplicationController
   end
 
   def home
+  end
+
+  def edit
     @user = User.find_by :id => session[:id]
+    render 'users/update'
   end
 
   def update
    @user = User.find(session[:id]) 
+
    if @user.update(user_params)
      flash[:notice] = "Updated successfully!"
      redirect_to home_path
@@ -40,7 +45,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name, :email, :password, :status,
                                    images_attributes: [:image_link, :image_description],
                                    address_attributes: [:id, :city, :street, :home_number, :post_code, :country])
     end

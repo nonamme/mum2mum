@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   # user home page after login
   get "/home", to: "users#home"
 
-  resources :users, :path => ''
+  resources :users, :path => '', except: [:update]
+  patch 'users/:id', to: 'users#update', as: 'update'
 
   post 'newsletter/create' => 'newsletter#create', as: 'create'
 

@@ -1,8 +1,10 @@
 class User < ApplicationRecord
-  has_many :images
-  has_one :address
+  enum status: [:coffee, :shopping, :helpful]
 
+  has_many :images
   has_many :comments
+
+  has_one :address
 
   accepts_nested_attributes_for :images, :address
 

@@ -1,4 +1,4 @@
-<%= form_for @user, :html => {:id => "update-form", :class => "update-form" } do |f| %>
+<%= form_for @user, url: { action: 'update' }, :html => {:id => "update-form", :class => "update-form" } do |f| %>
   <%= f.text_field :name, :placeholder => "Imię i nazwisko (Wymagane)", :required => true %>
   <%= f.text_field :email, :placeholder => "Email (Wymagane)", :required => true %>
     <%= f.fields_for :address do |a| %>
@@ -8,6 +8,7 @@
       <%= a.text_field :post_code, :placeholder => "Kod pocztowy" %>
       <%= a.text_field :country, value: "United Kingdom", :placeholder => "Państwo" %>
     <% end %>
+    <%= f.select :status, User.statuses.collect { |v| [v[0], v[0]] } %>
   <%= f.submit :value=>"Aktualizuj dane" %>
 <% end %>
 

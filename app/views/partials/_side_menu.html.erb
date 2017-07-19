@@ -1,20 +1,21 @@
 <div id="logo" class="logo">M2M</div>
-<h6>Wyszukiwanie</h6>
+<h4>Wyszukiwanie</h4>
 <ul>
-  <li id="find-mom"><%= link_to "Szukaj mamusiek", home_path %></li>
+  <li id="home"><%= link_to "Home", show_profile_path(session[:id]) %></li>
+  <li id="find-mom"><%= link_to "Szukaj mamusiek" %></li>
   <li id="mom-nearby"><%= link_to "Pokaz w okolicy", moms_nearby_path %></li>
   <li id="rate-mom"><%= link_to "Oceń mame", all_path %></li>
   <li id="babysiter"><%= link_to "Znajdz nianie" %></li>
   <li id="help"><%= link_to "Znajdz pomoc" %></li>
 </ul>
-  <h6>Miejsca i wydarzenia</h6>
+  <h4>Miejsca i wydarzenia</h4>
 <ul>
   <li id="add-place"><%= link_to "Dodaj miejsce spotkan" %></li>
   <li id="add-event"><%= link_to "Dodaj wydarzenie" %></li>
   <li id="rate-place"><%= link_to "Ocen miejsce" %></li>
 </ul>
-<h6>Dane osobowe</h6>
+<h4>Dane osobowe</h4>
 <ul>
-  <li id="update-data"><%= link_to "Akutalizuj swoje dane" %></li>
+  <li id="update-data"><%= link_to "Akutalizuj swoje dane", edit_user_path(session[:id]) %></li>
   <li id="log-out"><%= link_to "Log out", sessions_destroy_path %>
 </ul>
