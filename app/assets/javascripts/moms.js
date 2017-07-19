@@ -8,7 +8,7 @@ search.addEventListener('keyup', (e) => {
       if( !mumsList.children[i].querySelector('h3').textContent.match(new RegExp(e.target.value, "gi"))) {
         mumsList.children[i].style.display = "none";
       } else if( mumsList.children[i].querySelector('h3').textContent.match(new RegExp(e.target.value, "gi"))) {
-        mumsList.children[i].style.display = "flex";
+        mumsList.children[i].style.display = "list-item";
       }
     }
   } 

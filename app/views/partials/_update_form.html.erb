@@ -8,7 +8,7 @@
       <%= a.text_field :post_code, :placeholder => "Kod pocztowy" %>
       <%= a.text_field :country, value: "United Kingdom", :placeholder => "Państwo" %>
     <% end %>
-    <%= f.select :status, User.statuses.collect { |v| [v[0], v[0]] } %>
-  <%= f.submit :value=>"Aktualizuj dane" %>
+    <%= f.select :status, User.statuses.collect { |v| [v[0].to_s.capitalize, v[0]] } %>
+  <%= f.submit :value=>"Aktualizuj dane", class: "btn" %>
 <% end %>
 
