@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
    if @user.update(user_params)
      flash[:notice] = "Updated successfully!"
-     redirect_to home_path
+     redirect_to show_profile_path session[:id]
    else
      flash[:error] = "Can not update data. Sorry, try again later."
      redirect_to home_path
