@@ -1,0 +1,57 @@
+@import 'colors.sass'
+
+#welcome-board.welcome-board
+  display: flex
+  #profile-board.profile-board
+    margin: 50px
+    width: 100%
+    #profile-data.profile-data
+      display: flex
+      width: 100%
+      margin-bottom: 100px
+      #image-container.image-container
+        margin-right: 30px
+      #user-data-container.user-data-container
+        display: flex
+        width: 100%
+        & > *
+          flex: 1
+  #main-content.main-content
+    display: flex
+    margin-bottom: 100px
+    & *
+      flex: 1
+    #events.events,
+    #upcoming.upcoming
+      ul
+        list-style: none
+        padding: 0
+        li
+          display: flex
+          padding: 10px 0px
+          &:before
+            display: block
+            width: 24px
+            height: 24px
+            content: ""
+            margin-right: 10px
+    .events
+      ul
+        li:before
+          background-image: image-url('svg/checked.svg')
+    .upcoming
+      ul
+        li:before
+          background-image: image-url('svg/callendar.svg')
+
+  #comments.comments
+    border-top: 1px solid $headers
+    padding-top: 30px
+    h3
+      margin-bottom: 30px
+    #comments-container
+      margin-bottom: 20px
+      #comment
+        padding: 10px
+        &:nth-child(odd)
+          background-color: darken($background, 7%)

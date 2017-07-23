@@ -24,24 +24,28 @@ class UsersController < ApplicationController
   end
 
   def home
+  end
+
+  def edit
     @user = User.find_by :id => session[:id]
+    render 'users/update'
   end
 
   def update
    @user = User.find(session[:id]) 
+
    if @user.update(user_params)
      flash[:notice] = "Updated successfully!"
-     redirect_to home_path
+     redirect_to show_profile_path session[:id]
    else
      flash[:error] = "Can not update data. Sorry, try again later."
-     redirect_to home_path
+     redirect_to show_profile_path session[:id]
    end
   end
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   images_attributes: [:image_link, :image_description],
+      params.require(:user).permit(:name, :email, :password, :status, :image,
                                    address_attributes: [:id, :city, :street, :home_number, :post_code, :country])
     end
 
@@ -57,15 +61,15 @@ class UsersController < ApplicationController
 
     def logged
       if session[:id] != nil
-        redirect_to home_path
+        redirect_to show_profile_path session[:id]
       end
     end
 
     def getUsersLocations
-      @users = Address.all
-      @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-        marker.lat user.latitude
-        marker.lng user.longitude
+      @addresses = Address.all
+      @hash = Gmaps4rails.build_markers(@addresses) do |address, marker|
+        marker.lat address.latitude
+        marker.lng address.longitude
       end
     end
 end

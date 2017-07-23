@@ -1,35 +1,23 @@
-$dark-blue: rgba(41, 128, 185,1.0)
-$light-blue: rgba(52, 152, 219,1.0)
-$lighter-blue: rgba(137, 196, 244, 1.0)
+@import 'colors.sass'
 
 nav
-  font-size: .8rem
-  text-align: right
-  background-color:  rgba($light-blue, .75)
-  border-bottom: 3px solid $light-blue
-  position: fixed 
-  top: 0
-  left: 0
-  right: 0
-  z-index: 4
-  a
-    align-self: center
-    color: $lighter-blue
-    max-width: 90px
-    font-weight: bold
-    text-decoration: none
-    text-align: center
-    margin: 10px 15px
-    &:hover
-      text-decoration: underline
-  #container
+  background-color: $headers
+  #container.container
     display: flex
-    max-width: 1200px
+    max-width: 90%
     margin: 0 auto
-    & * 
+    & *
       flex: 1
-    & div:first-child
-      text-align: left
     #wrapper.wrapper
       display: flex
+      align-items: center
       justify-content: flex-end
+      text-align: right
+      a
+        max-width: 150px
+        text-align: center
+        display: inline-block
+        padding: 25px 15px
+        &:hover
+          background-color: $sub-text
+          text-decoration: none

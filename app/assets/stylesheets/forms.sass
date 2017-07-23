@@ -1,0 +1,24 @@
+@import 'colors.sass'
+
+#reg-form.reg-form,
+#login-form.login-form
+  max-width: 500px
+  margin: 0 auto
+  h1
+    margin: 50px 0 30px
+  form
+    width: 100%
+    input
+      width: 100%
+      padding: 0
+      padding: 15px 10px
+      margin-bottom: 10px
+      border: 1px solid rgba($sub-text, .4)
+      box-sizing: border-box
+      &[type="submit"]
+        background-color: $sub-text
+        color: $link
+        &:hover
+          background-color: $headers
+          color: $hover-link
+          cursor: pointer

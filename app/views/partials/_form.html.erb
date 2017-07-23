@@ -9,7 +9,6 @@
 </div>
 <div id="reg-form" class="reg-form">
 <h1>Register form</h1>
-<p>Pola wymagane "pelne imie", "email", "haslo" oraz "miasto". Reszta pol nie jest wymagana, jednakze, aby moc korzystac jak najlepiej z naszego serwisu wypelnij wszystkie. Pomoze nam to w znajdowaniu dla ciebie dokladnijszych informacji.</p>
 <%= form_for @user do |f| %>
   <%= f.text_field :name, :placeholder => "Imię i nazwisko (Wymagane)", :required => true %>
   <%= f.text_field :email, :placeholder => "Email (Wymagane)", :required => true %>
