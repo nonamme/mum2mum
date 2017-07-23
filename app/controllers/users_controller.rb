@@ -39,14 +39,13 @@ class UsersController < ApplicationController
      redirect_to show_profile_path session[:id]
    else
      flash[:error] = "Can not update data. Sorry, try again later."
-     redirect_to home_path
+     redirect_to show_profile_path session[:id]
    end
   end
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :status,
-                                   images_attributes: [:image_link, :image_description],
+      params.require(:user).permit(:name, :email, :password, :status, :image,
                                    address_attributes: [:id, :city, :street, :home_number, :post_code, :country])
     end
 
@@ -62,7 +61,7 @@ class UsersController < ApplicationController
 
     def logged
       if session[:id] != nil
-        redirect_to home_path
+        redirect_to show_profile_path session[:id]
       end
     end
 
