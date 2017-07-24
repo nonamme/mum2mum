@@ -3,8 +3,18 @@
       <%= render 'partials/side_menu' %>
   </aside>
   <div id="dashboard" class="dashboard">
-    <div id="map-container" class="map-container">
-      <div id="map"></div>
-    </div>
+    <ul id="mums-list" class="mums-list">
+    <% @users.each do |user| %>
+      <li>
+        <%= image_tag user.image.url, id: "profile", class: "profile" %>
+        <div id="profile" class="profile">
+          <h3><%= "#{truncate user.name, :length => 16}" %></h3>
+          <%= link_to "Profile", show_profile_path(user.id), id: "view-profile", class: "view-profile" %>
+         <%= link_to "Comment", show_profile_path(user.id) + "#comments", id: "comment-profile", class: "comment-profile" %>
+         <p><%= user.status.to_s.capitalize %></p>
+        </div>
+      </li>
+    <% end %>
+    </ul>
   </div>
 </div>

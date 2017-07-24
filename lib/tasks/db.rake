@@ -18,4 +18,19 @@ namespace :db do
       )
     end
   end
+
+  desc "Add status to profiles"
+  task addstatus: :environment do
+    a = [:coffee, :shopping, :helpful]
+    User.all.each do |user|
+      user.update status: a.sample
+    end
+  end
+
+  desc "Add missing picture"
+  task addpicture: :environment do
+    User.all.each do |user|
+      user.update image: File.open(Dir.glob(File.join(Rails.root, "app", "assets", "images", "svg", "*")).sample)
+    end
+  end
 end

@@ -4,9 +4,8 @@ class User < ApplicationRecord
   has_many :comments
 
   has_one :address
-  has_one :image
 
-  accepts_nested_attributes_for :image, :address
+  accepts_nested_attributes_for :address
 
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
