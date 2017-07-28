@@ -1,0 +1,31 @@
+div#notice,
+div#error
+  position: fixed
+  top: 100px
+  left: 0
+  right: 0
+  width: 500px
+  margin: 0 auto
+  border: 5px solid #34495e
+  border-radius: 5px
+  padding: 30px
+  background-color: #C8F7C5
+  font-weight: bold
+  font-size: 18pt
+  animation-name: fadeOut
+  animation-duration: 4s
+  animation-fill-mode: forwards
+div#notice
+  border-color: #1BA39C
+  color: #1BA39C
+div#error
+  border-color: #D24D57
+  color: #D24D57
+
+@keyframes fadeOut
+  from 
+    display: block
+    opacity: 1
+  to
+    display: none
+    opacity: 0

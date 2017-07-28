@@ -30,7 +30,9 @@ namespace :db do
   desc "Add missing picture"
   task addpicture: :environment do
     User.all.each do |user|
-      user.update image: File.open(Dir.glob(File.join(Rails.root, "app", "assets", "images", "svg", "*")).sample)
+      File.open(Dir.glob(Rails.root.join('app/assets/images/svg/*').to_s).sample) do |file|
+        user.update image: file
+      end
     end
   end
 end
