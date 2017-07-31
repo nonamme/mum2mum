@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :address
 
-  has_attached_file :image
+  has_attached_file :image, :style => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => '/images/:style/missing.png'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   validates :name, presence: true, length: { minimum: 3 }
