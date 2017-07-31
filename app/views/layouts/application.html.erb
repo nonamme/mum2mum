@@ -29,7 +29,8 @@
      maxZoom: 13,
      zoom: 8,
      center: { lat: 54.0000, lng: -2.0000 },
-     mapTypeId: 'roadmap'
+     mapTypeId: 'roadmap',
+     scrollwheel: false
    }, internal: {id: 'map'}}, function(){
      markers = handler.addMarkers(<%=raw @hash.to_json %>);
       handler.bounds.extendWith(markers);
