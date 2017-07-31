@@ -8,6 +8,7 @@ capybara-*.html
 /tmp
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/db/migrate/* 
 /public/system
 /coverage/
 /spec/tmp
