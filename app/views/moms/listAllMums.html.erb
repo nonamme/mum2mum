@@ -4,7 +4,7 @@
   </aside>
   <div id="dashboard" class="dashboard">
     <input type="search" placeholder="Find mum" id="find-mum-search" class="find-mum-search">
-    <%= select_tag :status, options_for_select( User.statuses.collect { |a| [a[0].capitalize, a[0]] }) %>
+    <%= select_tag :status, options_for_select( User.statuses.collect { |a| [a[0].capitalize, a[0]] }, "Coffee") %>
     <ul id="mums-list" class="mums-list">
     <% @mums.each do |mum| %>
       <li>
