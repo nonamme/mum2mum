@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by email: params[:sessions][:email]
+    user = User.find_by email: params[:sessions][:email]
 
-   if @user && params[:sessions][:password] === @user.password
-      session[:id] = @user.id
+   if user && user.authenticate(params[:sessions][:password])
+      session[:id] = user.id
       success_login
     else
       failed_login

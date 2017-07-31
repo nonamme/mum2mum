@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724054740) do
+ActiveRecord::Schema.define(version: 20170731042401) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "city"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20170724054740) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status"
@@ -52,6 +51,7 @@ ActiveRecord::Schema.define(version: 20170724054740) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.string "password_digest"
     t.index ["id"], name: "index_users_on_id"
   end
 
