@@ -1,15 +1,7 @@
-<div id="errors" class="errors">
-<% if @user.errors.any? %>
-  <ul>
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-  </ul>
-<% end %>
-</div>
+<div id="errors" class="errors"><!-- Place holder for error handling --></div>
 <div id="reg-form" class="reg-form">
-<h1>Register form</h1>
-<%= form_for @user do |f| %>
+<h2>Zarejestruj się</h2>
+<%= form_for User.new do |f| %>
   <%= f.text_field :name, :placeholder => "Imię i nazwisko (Wymagane)", :required => true %>
   <%= f.text_field :email, :placeholder => "Email (Wymagane)", :required => true %>
   <%= f.password_field :password, :placeholder => "Hasło (Wymagane)", :required => true %>
@@ -21,6 +13,6 @@
     <%= a.text_field :post_code, :placeholder => "Kod pocztowy" %>
     <%= a.text_field :country, value: "United Kingdom", :placeholder => "Państwo" %>
   <% end %>
-  <%= f.submit :value=>"Dołącz do nas" %>
+  <%= f.submit "Dołącz do nas" %>
 <% end %>
 </div>
