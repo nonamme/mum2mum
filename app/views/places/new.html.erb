@@ -1,0 +1,39 @@
+<div id="place" class="place">
+  <aside id="left-side-menu" class="left-side-menu">
+      <%= render 'partials/side_menu' %>
+  </aside>
+  <div id="dashboard" class="dashboard">
+    <h1>Dodaj nowe miejsce</h1>
+    <%= form_for Place.new do |f| %>
+      <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div>
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+      </div>
+      <div>
+        <%= f.label :local_no %>
+        <%= f.text_field :local_no %>
+      </div>
+      <div>
+        <%= f.label :street %>
+        <%= f.text_field :street %>
+      </div>
+      <div>
+        <%= f.label :post_code %>
+        <%= f.text_field :post_code %>
+      </div>
+      <div>
+        <%= f.label :link %>
+        <%= f.text_field :link %>
+      </div>
+      <div>
+        <%= f.label :open_hours %>
+        <%= f.text_field :open_hours %>
+      </div>
+      <%= f.submit "Dodaj" %>
+    <% end %>
+  </div>
+</div>

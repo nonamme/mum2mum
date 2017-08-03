@@ -1,0 +1,29 @@
+<div id="place" class="place">
+  <aside id="left-side-menu" class="left-side-menu">
+      <%= render 'partials/side_menu' %>
+  </aside>
+  <header>
+    <figure>
+      <img src="http://images.nintendolife.com/games/ds/dk_jungle_climber/large.jpg">
+      <figcaption>
+        <h1><%= @place.name %></h1>
+      </figcaption>
+    </figure>
+    <div id="description">
+      <h3>Opis miejsca</h3>
+      <p><%= @place.description %></p>
+    </div>
+    <div id="open-hours">
+      <h3>Godzina otwarcia</h3>
+      <p><%= @place.open_hours %></p>
+    </div>
+    <div id="address">
+      <h3>Address</h3>
+      <p><%= @place.city %></p>
+      <p><%= @place.local_no %></p>
+      <p><%= @place.street %></p>
+      <p><%= @place.post_code %></p>
+      <p><%= link_to @place.link, @place.link %></p>
+    </div>
+  </header>
+</div>

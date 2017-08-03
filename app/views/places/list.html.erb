@@ -1,0 +1,19 @@
+<div id="welcome-board" class="welcome-board">
+  <aside id="left-side-menu" class="left-side-menu">
+      <%= render 'partials/side_menu' %>
+  </aside>
+  <div id="dashboard" class="dashboard">
+    <input type="search" placeholder="Znajdź miejsce" id="find-place-search" class="find-place-search">
+    <ul id="places-list" class="places-list">
+    <% Place.all.each do |place| %>
+      <li>
+       <div id="profile" class="profile">
+         <h3><%= "#{truncate place.name, :length => 16}" %></h3>
+         <%= link_to "Profile |", show_place_path(place.id), id: "view-profile", class: "view-profile" %>
+         <%= link_to "Comment", show_place_path(place.id) + "#comments", id: "comment-profile", class: "comment-profile" %>
+       </div>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>

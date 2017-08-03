@@ -2,7 +2,7 @@
 
 aside
   background-color: $sub-text
-  padding: 20px 50px
+  padding: 0px 50px
   max-width: 190px
   min-width: 200px
   min-height: 100%
@@ -26,7 +26,8 @@ aside
         background-position: center
       &#home:before
         background-image: image-url("svg/home.svg")
-      &#find-mom:before
+      &#find-mom:before,
+      &#find-place:before
         background-image: image-url("svg/search.svg")
       &#mom-nearby:before
         background-image: image-url("svg/place.svg")
@@ -36,8 +37,7 @@ aside
         background-image: image-url("svg/babysiter.svg")
       &#help:before
         background-image: image-url("svg/info.svg")
-      &#add-place:before
-        background-image: image-url("svg/add.svg")
+      &#add-place:before,
       &#add-event:before
         background-image: image-url("svg/add.svg")
       &#rate-place:before
@@ -50,4 +50,5 @@ aside
         color: $background
         align-self: center
   #logo
+    margin-top: 20px
     margin-bottom: 20px

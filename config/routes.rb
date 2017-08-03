@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   get 'moms/listAllMums', as: 'all'
   get 'moms/showProfile/:id', to: 'moms#showProfile', as: 'show_profile'
 
-  get 'places/list'
+  get 'places/list', as: "list"
+  get 'places/show/:id', to: "places#show", as: "show_place"
+  get 'places/new', as: "new_place"
+  post 'places/create', as: "places"
 
   post 'comments/add', as: 'comment'
 
