@@ -4,9 +4,9 @@
   </aside>
   <header>
     <figure>
-      <%= image_tag @place.image.url %>
+      <%= image_tag @place.image.url.html_safe %>
       <figcaption>
-        <h1><%= @place.name %></h1>
+        <h1><%= @place.name.html_safe %></h1>
       </figcaption>
     </figure>
     <div id="description">
@@ -15,15 +15,15 @@
     </div>
     <div id="open-hours">
       <h3>Godzina otwarcia</h3>
-      <p><%= @place.open_hours %></p>
+      <p><%= @place.open_hours.html_safe %></p>
     </div>
     <div id="address">
       <h3>Address</h3>
-      <p><%= @place.city %></p>
+      <p><%= @place.city.html_safe %></p>
       <p><%= @place.local_no %></p>
-      <p><%= @place.street %></p>
-      <p><%= @place.post_code %></p>
-      <p><%= link_to @place.link, @place.link %></p>
+      <p><%= @place.street.html_safe %></p>
+      <p><%= @place.post_code.html_safe %></p>
+      <p><%= link_to @place.link.html_safe, @place.link.html_safe %></p>
     </div>
   </header>
 </div>

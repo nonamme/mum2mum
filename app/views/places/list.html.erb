@@ -8,7 +8,7 @@
     <% Place.all.each do |place| %>
       <li>
        <div id="profile" class="profile">
-         <h3><%= "#{truncate place.name, :length => 16}" %></h3>
+         <h3><%= "#{truncate place.name.html_safe, :length => 16}" %></h3>
          <%= link_to "Profile |", show_place_path(place.id), id: "view-profile", class: "view-profile" %>
          <%= link_to "Comment", show_place_path(place.id) + "#comments", id: "comment-profile", class: "comment-profile" %>
        </div>
