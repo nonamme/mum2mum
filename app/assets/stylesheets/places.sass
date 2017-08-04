@@ -42,17 +42,27 @@
     width: 500px
     display: flex
     flex-direction: column
+    margin-bottom: 50px
     div
       display: inherit
       justify-content: space-between
       margin-bottom: 10px
-      input[type="text"]
+      input[type="text"],
+      textarea
         border: solid 1px $headers
       label,
-      input
+      input,
+      textarea
         flex: 1
+    textarea
+      height: 100px
+      resize: none
     input[type="submit"]
       width: 200px
+      background-color: $headers
+      color: $background
+      margin-top: 20px
+      margin-left: calc(100% - 200px)
   #dashboard
     margin: 0 auto
     h1
