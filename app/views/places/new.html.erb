@@ -7,31 +7,39 @@
     <%= form_for Place.new do |f| %>
       <div>
         <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, :placeholder => "(Wymagane)" %>
       </div>
       <div>
         <%= f.label :city %>
-        <%= f.text_field :city %>
+        <%= f.text_field :city, :placeholder => "(Wymagane)"%>
       </div>
       <div>
         <%= f.label :local_no %>
-        <%= f.text_field :local_no %>
+        <%= f.text_field :local_no, :placeholder => "(Wymagane)" %>
       </div>
       <div>
         <%= f.label :street %>
-        <%= f.text_field :street %>
+        <%= f.text_field :street, :placeholder => "(Wymagane)" %>
       </div>
       <div>
         <%= f.label :post_code %>
-        <%= f.text_field :post_code %>
+        <%= f.text_field :post_code, :placeholder => "(Wymagane)" %>
       </div>
       <div>
         <%= f.label :link %>
-        <%= f.text_field :link %>
+        <%= f.text_field :link, :placeholder => "(Wymagane)" %>
       </div>
       <div>
         <%= f.label :open_hours %>
-        <%= f.text_field :open_hours %>
+        <%= f.text_field :open_hours, :placeholder => "(Wymagane)" %>
+      </div>
+      <div>
+        <%= f.label :description %>
+        <%= f.text_area :description, :placeholder => "(Wymagane)" %>
+      </div>
+      <div>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
       </div>
       <%= f.submit "Dodaj" %>
     <% end %>
