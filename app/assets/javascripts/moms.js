@@ -1,15 +1,15 @@
-let search = document.querySelector("#find-mum-search");
+let search = document.querySelector("input[type='search']");
 let select = document.querySelector("select#status");
 
 search.addEventListener('keyup', (e) => {
-  let mumsList = document.querySelector("#mums-list");
+  let list = document.querySelector("#mums-list") || document.querySelector("#places-list")
 
   if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode == 8){
-    for(var i = 0; i < mumsList.children.length; i++){
-      if( !mumsList.children[i].querySelector('h3').textContent.match(new RegExp(e.target.value, "gi"))) {
-        mumsList.children[i].style.display = "none";
-      } else if( mumsList.children[i].querySelector('h3').textContent.match(new RegExp(e.target.value, "gi"))) {
-        mumsList.children[i].style.display = "list-item";
+    for(var i = 0; i < list.children.length; i++){
+      if( !list.children[i].querySelector('h3').textContent.match(new RegExp(e.target.value, "gi"))) {
+        list.children[i].style.display = "none";
+      } else if( list.children[i].querySelector('h3').textContent.match(new RegExp(e.target.value, "gi"))) {
+        list.children[i].style.display = "list-item";
       }
     }
   } 
