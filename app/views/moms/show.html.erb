@@ -1,4 +1,11 @@
 <div id="welcome-board" class="welcome-board">
+  <% if flash[:notice] %>
+  <div id="notice" class="notice">
+    <div id="notice" class="notice">
+      <%= flash[:notice] %>
+    </div>
+  </div>
+  <% end %>
   <aside id="left-side-menu" class="left-side-menu">
       <%= render 'partials/side_menu' %>
   </aside>

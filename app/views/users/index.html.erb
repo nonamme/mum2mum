@@ -1,11 +1,11 @@
 <div id="welcome" class="welcome">
-<% if @user.errors.any? %>
-  <ul>
-  <% @user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+  <% if flash[:error] %>
+  <div id="notice" class="notice">
+    <div id="error" class="error">
+      <%= flash[:error] %>
+    </div>
+  </div>
   <% end %>
-  </ul>
-<% end %>
   <div id="container" class="container">
     <div id="welcome-picture" class="welcome-picture">
       <h2>Pomagamy łączyć mamy.</h2>
