@@ -25,5 +25,13 @@
       <p><%= @place.post_code.html_safe %></p>
       <p><%= link_to @place.link.html_safe, 'http://' + @place.link.html_safe %></p>
     </div>
+    <div id="upcomming-events">
+      <h3>Nadchodzące wydarzenia</h3>
+      <ul>
+        <% @place.events.each do |event| %>
+          <li><%= event.title %></li>
+        <% end %>
+      </ul>
+    </div>
   </header>
 </div>
