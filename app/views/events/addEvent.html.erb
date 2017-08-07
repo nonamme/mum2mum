@@ -1,0 +1,14 @@
+<div id="welcome-board" class="welcome-board">
+  <aside id="left-side-menu" class="left-side-menu">
+      <%= render 'partials/side_menu' %>
+  </aside>
+  <div id="dashboard" class="dashboard">
+    <h1>Dodaj wydarzenie</h1>
+    <%= form_for @event, url: events_create_path  do |f| %>
+      <%= f.select :place_id, Place.all.collect { |p| [p.name, p.id] } %>
+      <%= f.text_field :title %>
+      <%= f.text_area :description %>
+      <%= f.submit "Dodaj wydarzenie" %>
+    <% end %>
+  </div>
+</div>

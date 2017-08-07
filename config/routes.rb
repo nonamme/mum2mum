@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get 'places/new', as: "new_place"
   post 'places/create', as: "places"
 
+  get 'events/new'
+  post 'events/create'
+
   post 'comments/add', as: 'comment'
 
   resources :users, except: [:index, :show, :edit, :delete, :update, :create, :new] do

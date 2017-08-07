@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170804040248) do
+ActiveRecord::Schema.define(version: 20170807045954) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "city"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20170804040248) do
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "begin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "place_id"
   end
 
   create_table "newsletters", force: :cascade do |t|
