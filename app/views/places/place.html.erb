@@ -28,6 +28,9 @@
     <div id="upcomming-events">
       <h3>Nadchodzące wydarzenia</h3>
       <ul>
+        <% if @place.events.count == 0 %>
+        <li>Nie ma żadnych nadchodzących wydarzeń. Przejdź do <%= link_to "Dodaj wydarzenie", events_new_path %> aby dodać nowe wydarzenie.</li>
+        <% end %>
         <% @place.events.each do |event| %>
           <li><%= event.title %></li>
         <% end %>
