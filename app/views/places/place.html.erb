@@ -23,7 +23,7 @@
       <p><%= @place.local_no %></p>
       <p><%= @place.street.html_safe %></p>
       <p><%= @place.post_code.html_safe %></p>
-      <p><%= link_to @place.link.html_safe, @place.link.html_safe %></p>
+      <p><%= link_to @place.link.html_safe, 'http://' + @place.link.html_safe %></p>
     </div>
   </header>
 </div>
