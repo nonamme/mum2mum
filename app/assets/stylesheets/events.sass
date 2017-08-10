@@ -1,0 +1,22 @@
+@import 'colors'
+
+#events.events
+  h1
+    margin: 30px 0 10px 20px
+  #new_event
+    margin: 0 auto
+    display: flex
+    flex-wrap: wrap
+    width: 300px
+    select, input, textarea
+      margin: 0 20px 10px
+      border: solid 1px $borders
+      flex: 1
+      min-width: 200px
+    textarea
+      box-sizing: border-box
+      resize: none
+      height: 100px
+    input[type='submit']
+      background-color: $button
+      color: $white
