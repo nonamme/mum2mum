@@ -4,13 +4,21 @@
   </aside>
   <div id="dashboard" class="dashboard">
     <div id="events" class="events">
-      <h1>Dodaj wydarzenie</h1>
-      <%= form_for @event, url: events_create_path  do |f| %>
-        <%= f.select :place_id, Place.all.collect { |p| [p.name, p.id] } %>
-        <%= f.text_field :title, placeholder: "Title" %>
-        <%= f.text_area :description, placeholder: "Type description here" %>
-        <%= f.submit "Dodaj wydarzenie" %>
-      <% end %>
+      <div id="explanation-text">
+        <h1>Dodaj wydarzenie</h1>
+        <p>Jeśli wiesz o jakimś nadchodzącym wydarzeniu podziel się. Z rozwijanej listy wybierze miejsce, w którym to wydarzenie się odbędzie. W polu "Title" wpisz nazwe wydarzenia, a poniżej dodaj krótki opis.</p>
+        <p>Możesz również, dodać miejsce jeśli nie znajduje się na liście. Po lewej stronie w menu znajdziesz link do "Dodaj miejsce spotkań" lub poprostu kliknij <%= link_to "tutaj", new_place_path %> aby dodać miejsce do listy.</p>
+        <p>Każde wydarzenie to dobry sposób na poznanie nowych osób lub na spędzenie czasu z przyjaciółmi.</p>
+        <%= image_tag "svg/balloon.svg" %>
+      </div>
+      <div id="form" class="form">
+        <%= form_for @event, url: events_create_path  do |f| %>
+          <%= f.select :place_id, Place.all.collect { |p| [p.name, p.id] } %>
+          <%= f.text_field :title, placeholder: "Title" %>
+          <%= f.text_area :description, placeholder: "Type description here" %>
+          <%= f.submit "Dodaj wydarzenie" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
