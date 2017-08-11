@@ -12,7 +12,7 @@
       padding: 0
       padding: 10px 10px
       margin-bottom: 10px
-      border: 1px solid rgba($sub-text, .4)
+      border: 1px solid $borders
       box-sizing: border-box
       background-color: rgba(255, 255, 255, .8)
       &[type="submit"]
@@ -26,13 +26,13 @@
           cursor: pointer
 #login-form.login-form
   input
-    background-color: lighten($headers, 3)
+    background-color: lighten($menu, 3)
     padding: 5px 10px
-    color: $background
+    color: $text
     &[type='submit']
-      background-color: darken($headers, 7) 
+      background-color: darken($menu, 7) 
       color: $background
       &:hover
-        background-color: darken($headers, 7)
+        background-color: darken($menu, 7)
         color: $hover-link
         cursor: pointer

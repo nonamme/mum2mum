@@ -1,37 +1,36 @@
 @import 'colors'
 
-#events.events
-  margin: 50px
-  display: flex
-  div
-    flex: 1
-  #explanation-text
-    text-align: center
-    h1, p
-      text-align: left
-    h1
-      margin-top: 100px
-    p
-      margin-bottom: 40px
-      padding-right: 120px
-      font-size: 12pt
-  #form
+#dashboard
+  #events.events
     display: flex
-  form#new_event
-    margin-top: 145px
-    display: flex
-    width: 500px
-    flex-wrap: wrap
-    align-self: center
-    select, input, textarea
-      margin: 0 20px 35px
-      border: solid 1px $borders
-      min-width: 100%
+    margin: 50px
+    & > div
       flex: 1
-      box-sizing: border-box
-    textarea
-      resize: none
-      height: 140px
-    input[type='submit']
-      background-color: $button
-      color: $white
+    #explanation-text
+      text-align: center
+      h1, p
+        text-align: left
+      p
+        margin-bottom: 40px
+        padding-right: 120px
+        font-size: 12pt
+    #form
+      display: flex
+      margin-top: 80px
+    form#new_event
+      width: 500px
+      flex-wrap: wrap
+      select, input, textarea
+        margin-bottom: 20px
+        border: solid 1px $borders
+        min-width: 100%
+        flex: 1
+        box-sizing: border-box
+      textarea
+        resize: none
+        height: 140px
+      input[type='submit']
+        background-color: $button
+        color: $white
+      input, select
+        height: 50px

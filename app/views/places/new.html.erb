@@ -3,45 +3,44 @@
       <%= render 'partials/side_menu' %>
   </aside>
   <div id="dashboard" class="dashboard">
+    <div id="explanation-text">
     <h1>Dodaj nowe miejsce</h1>
-    <%= form_for Place.new do |f| %>
-      <div>
-        <%= f.label :name %>
-        <%= f.text_field :name, :placeholder => "(Wymagane)" %>
-      </div>
-      <div>
-        <%= f.label :city %>
-        <%= f.text_field :city, :placeholder => "(Wymagane)"%>
-      </div>
-      <div>
-        <%= f.label :local_no %>
-        <%= f.text_field :local_no, :placeholder => "(Wymagane)" %>
-      </div>
-      <div>
-        <%= f.label :street %>
-        <%= f.text_field :street, :placeholder => "(Wymagane)" %>
-      </div>
-      <div>
-        <%= f.label :post_code %>
-        <%= f.text_field :post_code, :placeholder => "(Wymagane)" %>
-      </div>
-      <div>
-        <%= f.label :link %>
-        <%= f.text_field :link, :placeholder => "(Wymagane)" %>
-      </div>
-      <div>
-        <%= f.label :open_hours %>
-        <%= f.text_field :open_hours, :placeholder => "(Wymagane)" %>
-      </div>
-      <div>
-        <%= f.label :description %>
-        <%= f.text_area :description, :placeholder => "(Wymagane)" %>
-      </div>
-      <div>
-        <%= f.label :image %>
-        <%= f.file_field :image %>
-      </div>
-      <%= f.submit "Dodaj" %>
-    <% end %>
+    <p>Dolor magnam esse quasi cupiditate ducimus possimus tenetur recusandae dolor necessitatibus earum, magnam tenetur iste nisi tenetur ratione. Eum velit optio ab molestias odit blanditiis eius, quidem. Repellendus abi Consectetur nam quod aliquam id sit earum enim harum vero nisi velit asperiores obcaecati! Nesciunt vero qui totam ad iure iusto reprehenderit repudiandae exercitationem! Aspernatur modi error ab harum facilis.</p>
+    <p>Amet possimus distinctio illo excepturi veniam quam eius dolor perspiciatis quia officiis necessitatibus? Placeat quidem hic labore sint sint aut ea, sed aperiam esse incidunt consequatur? Fugit totam quod nobis.i Dolor id enim odio provident harum commodi ex maxime aliquam debitis modi impedit, laborum voluptatem. Sint assumenda consequatur maxime possimus alias? Deserunt placeat maxime id ab quidem porro consequuntur? Quia?</p>
+    <p>Elit ratione architecto id magnam nulla quia ullam quis saepe commodi animi? Numquam facere eius reiciendis voluptatum hic, nisi ipsa perferendis itaque non! Dignissimos culpa alias illo optio porro. Temporibus. Ipsum qui amet reiciendis cumque earum libero animi autem accusantium accusamus corrupti, saepe rerum beatae assumenda maxime adipisicing, maxime a laborum quaerat. Accusamus incidunt in iste aspernatur odio ipsa. Hic. </p>
+    <%= image_tag 'svg/hills.svg' %>
+    </div>
+    <div id="form" class="form">
+      <%= form_for Place.new do |f| %>
+        <div>
+          <%= f.text_field :name, :placeholder => "Nazwa (Wymagane)" %>
+        </div>
+        <div>
+          <%= f.text_field :city, :placeholder => "Miasto (Wymagane)"%>
+        </div>
+        <div>
+          <%= f.text_field :local_no, :placeholder => "Numer lokalu (Wymagane)" %>
+        </div>
+        <div>
+          <%= f.text_field :street, :placeholder => "Ulica (Wymagane)" %>
+        </div>
+        <div>
+          <%= f.text_field :post_code, :placeholder => "Kod pocztowy (Wymagane)" %>
+        </div>
+        <div>
+          <%= f.text_field :link, :placeholder => "Link do strony (Wymagane)" %>
+        </div>
+        <div>
+          <%= f.text_field :open_hours, :placeholder => "Godziny otwarcia (Wymagane)" %>
+        </div>
+        <div>
+          <%= f.text_area :description, :placeholder => "Krótki opis (Wymagane)" %>
+        </div>
+        <div>
+          <%= f.file_field :image, :placeholder => "Zdjęcie miejsca" %>
+        </div>
+        <%= f.submit "Dodaj" %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -3,6 +3,24 @@
 #place.place
   margin: 0 auto 
   display: flex
+  #dashboard
+    display: flex
+    margin: 50px 30px
+    width: 100%
+    justify-content: space-between
+    div
+      flex: 1
+    #explanation-text
+      text-align: center
+      h1, p
+        text-align: left
+      img
+        margin-top: 30px
+      p
+        padding-right: 70px
+        font-size: 12pt
+        line-height: 22pt
+        margin-bottom: 30px
   header
     width: 100%
     min-height: 300px
@@ -42,7 +60,8 @@
     width: 500px
     display: flex
     flex-direction: column
-    margin-bottom: 50px
+    padding: 0 20px
+    margin-top: 80px
     div
       display: inherit
       justify-content: space-between
@@ -50,6 +69,9 @@
       input[type="text"],
       textarea
         border: solid 1px $headers
+        box-sizing: border-box
+      input[type='file']
+        max-width: 223px
       label,
       input,
       textarea
@@ -63,8 +85,6 @@
       color: $background
       margin-top: 20px
       margin-left: calc(100% - 200px)
-  #dashboard
-    margin: 0 auto
-    h1
-      margin-top: 30px
-      margin-bottom: 50px
+    label
+      text-align: right
+      padding-right: 50px
