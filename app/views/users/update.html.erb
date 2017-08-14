@@ -3,8 +3,21 @@
       <%= render 'partials/side_menu' %>
   </aside>
   <div id="dashboard" class="dashboard">
-    <div id="update-form" class="update-form">
-      <%= render 'partials/update_form' %>
+    <div id="update-date">
+      <div id="explanation-text">
+        <h1>Aktualizuj dane</h1>
+        <p>
+          Aktualny dane osobowe pomagają. Pamietaj aby posiadać w swoim profilu aktulane dane, dzięki temu inne osoby, które bardziej pasują do ciebie będą mogli cię znaleźć i Ty znajdziesz ich.
+        </p>
+        <h2>Zmień status</h2>
+        <p>
+          Aktualizowanie swojego statusu jest bardzo ważne. Gdy chcesz aby twoi znajomi wiedzieli co w danym momencie robisz, zmień status na przykład na "cooking", gdy gotujesz, a gdy robisz zakupy i chcesz, aby twoja koleżanka dołączyłą do tej interesującego wydarzenia "shopping" status będzie najbardziej odpowiednim.
+        </p>
+        <%= image_tag "svg/update.svg" %>
+      </div>
+      <div id="update-form" class="update-form">
+        <%= render 'partials/update_form' %>
+      </div>
     </div>
   </div>
 </div>
