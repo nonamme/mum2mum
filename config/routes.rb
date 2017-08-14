@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root "users#index", to: "users/index"
 
+  get 'socials/edit'
+
   get 'moms/nearby'
   get 'moms/listAllMums', as: 'all'
   get 'moms/showProfile/:id', to: 'moms#showProfile', as: 'show_profile'
