@@ -32,7 +32,7 @@
         <li>Nie ma żadnych nadchodzących wydarzeń. Przejdź do <%= link_to "Dodaj wydarzenie", events_new_path %> aby dodać nowe wydarzenie.</li>
         <% end %>
         <% @place.events.each do |event| %>
-          <li><%= event.title %></li>
+          <li><%= event.title %> Start: <%= event.date %></li>
         <% end %>
       </ul>
     </div>

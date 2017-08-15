@@ -16,6 +16,7 @@
           <%= f.select :place_id, Place.all.collect { |p| [p.name, p.id] } %>
           <%= f.text_field :title, placeholder: "Title" %>
           <%= f.text_area :description, placeholder: "Type description here" %>
+          <%= f.date_field :date %>
           <%= f.submit "Dodaj wydarzenie" %>
         <% end %>
       </div>
