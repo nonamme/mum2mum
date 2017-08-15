@@ -1,17 +1,33 @@
 @import 'colors.sass'
 
-#update-form
-  width: 500px
-  margin: 20px 
-  input,
-  select
-    width: 100%
-    box-sizing: border-box
-    margin-bottom: 10px
-    padding: 10px 5px
-    border: 1px solid $sub-text
-  input[type="submit"]
-    background-color: $sub-text
-    color: $background
-  select
-    background-color: white
+#update-date
+  display: flex
+  div
+    flex: 1
+  #explanation-text
+    margin: 50px 50px
+    text-align: center
+    h1, h2, p
+      text-align: left
+    p
+      font-size: 12pt
+      line-height: 18pt
+    img
+      margin-top: 50px
+  #update-form
+    width: 500px
+    margin: 20px 
+    padding-top: 40px
+    padding-right: 50px
+    input,
+    select
+      width: 100%
+      box-sizing: border-box
+      margin-bottom: 10px
+      padding: 10px 5px
+      border: 1px solid $sub-text
+    input[type="submit"]
+      background-color: $sub-text
+      color: $background
+    select
+      background-color: white

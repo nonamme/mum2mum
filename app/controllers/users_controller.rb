@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :getUsersLocations, :only => [:index, :home]
 
   def index
+    @user = @user || User.new
   end
 
   def new
@@ -11,9 +12,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params) 
-    if @user.save
+    if @user.valid?
+      @user.save
       success_register_message_redirect_root
     else
+      @user = User.new(user_params)
       failed_register_message_render_new
     end
   end
@@ -34,7 +37,7 @@ class UsersController < ApplicationController
   def update
    @user = User.find(session[:id]) 
 
-   if @user.update(user_params)
+   if @user.update!(user_params)
      flash[:notice] = "Updated successfully!"
      redirect_to show_profile_path session[:id]
    else
@@ -45,7 +48,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :status, :image,
+      params.require(:user).permit(:id, :name, :email, :password, :password_confirmation, :status, :image,
                                    address_attributes: [:id, :city, :street, :home_number, :post_code, :country])
     end
 
@@ -56,7 +59,7 @@ class UsersController < ApplicationController
 
     def failed_register_message_render_new
       flash[:error] = "You can not register yourself right now! Sorry."
-      render 'new'
+      render 'index'
     end
 
     def logged

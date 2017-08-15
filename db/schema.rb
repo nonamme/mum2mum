@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731042401) do
+ActiveRecord::Schema.define(version: 20170814041007) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "city"
@@ -35,11 +35,40 @@ ActiveRecord::Schema.define(version: 20170731042401) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "begin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "place_id"
+  end
+
   create_table "newsletters", force: :cascade do |t|
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "places", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.integer "local_no"
+    t.string "street"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "post_code"
+    t.string "link"
+    t.string "open_hours"
+    t.text "description"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+# Could not dump table "socials" because of following StandardError
+#   Unknown type 'reference' for column 'user_id'
 
   create_table "users", force: :cascade do |t|
     t.string "name"

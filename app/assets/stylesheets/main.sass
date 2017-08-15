@@ -7,7 +7,7 @@ html, body
   min-height: 100%
   box-sizing: border-box
   font-family: "Open Sans"
-  font-size: 16px
+  font-size: 14px
   color: $text
   background-color: $background
   margin: 0
@@ -17,13 +17,11 @@ html, body
   left: 0
   right: 0
   bottom: 0
+
 body
   min-height: 100%
   background-size: cover
-body#new
-  background-image: image-url('landing07.jpg')
-body#login
-  background-image: image-url('landing05.jpg')
+
 img
   width: 128px
   height: 128px
@@ -31,6 +29,7 @@ img
 a
   color: $link
   text-decoration: none
+  font-size: 12px
   &:hover
     color: $hover-link
     text-decoration: underline
@@ -38,7 +37,7 @@ a
 h1, h2, h3, h4, h5, h6
   color: $headers
   margin: 0
-
+  font-family: "Karma", serif
 h1
   font-size: 2.5rem
 h2
@@ -49,15 +48,17 @@ p
   color: $sub-text
 
 input
-  padding: 10px 5px
+  padding: 10px 10px
   border: none
   color: $text
   &[type="submit"],
   &[type="button"]
     min-width: 100px
+textarea
+  padding: 5px 10px
 
 #container.container
-  max-width: 90%
+  max-width: 980px
   height: 100%
   margin: 0 auto
 #btn
@@ -67,7 +68,9 @@ input
   padding: 15px 55px
   background-color: $background
 #logo.logo
-  font-family: "Lovers Quarrel" 
-  font-size: 4rem
+  font-family: "Nunito", sans-serif
+  font-weight: 900
+  font-size: 2rem
   color: $background
-
+  span
+    font-size: 1.5rem

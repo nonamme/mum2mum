@@ -2,9 +2,20 @@ Rails.application.routes.draw do
 
   root "users#index", to: "users/index"
 
+  get 'socials/edit'
+  patch 'socials/update'
+
   get 'moms/nearby'
   get 'moms/listAllMums', as: 'all'
   get 'moms/showProfile/:id', to: 'moms#showProfile', as: 'show_profile'
+
+  get 'places/list', as: "list"
+  get 'places/show/:id', to: "places#show", as: "show_place"
+  get 'places/new', as: "new_place"
+  post 'places/create', as: "places"
+
+  get 'events/new'
+  post 'events/create'
 
   post 'comments/add', as: 'comment'
 

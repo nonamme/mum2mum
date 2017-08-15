@@ -1,64 +1,20 @@
-<main id="welcome">
-  <div id="landing" class="landing">
-    <div id="container" class="container">
-      <div class="cover"></div>
-      <div id="welcome" class="welcome">
-        <h1>mom to mom</h1>
-        <p id="subtitle" class="subtitle">Znajdziesz tutaj mamy takie jak Ty.</p>
-        <%= link_to "Join us", '#newsletter', class: "btn btn-joinus", id: "btn" %>
-      </div>
+<div id="welcome" class="welcome">
+  <% if flash[:error] %>
+  <div id="notice" class="notice">
+    <div id="error" class="error">
+      <%= flash[:error] %>
     </div>
   </div>
-    <div id="features" class="features">
-      <div id="container" class="container">
-        <div id="box" class="box">
-          <%= image_tag('svg/conversation.svg') %>
-          <div id="wrapper" class="wrapper">
-            <h3>Nowe kontaktu</h3>
-            <p>Crucifix vaporware health goth, vexillologist hoodie tacos authentic next level kale chips coloring book vegan quinoa small batch ennui. </p>
-          </div>
-        </div>
-        <div id="box" class="box">
-          <%= image_tag('svg/meetings.svg') %>
-          <div id="wrapper" class="wrapper">
-            <h3>Wspaniałe wspomnienia</h3>
-            <p>Prism skateboard direct trade, microdosing cliche cornhole marfa fanny pack activated charcoal hexagon austin jianbing scenester semiotics brooklyn. </p>
-          </div>
-        </div>
-        <div id="box" class="box">
-          <%= image_tag('svg/rating.svg') %>
-          <div id="wrapper" class="wrapper">
-            <h3>Bezinteresowna pomoc</h3>
-            <p>Before they subway tile messenger bag, sriracha cred banjo williamsburg umami authentic ennui slow-carb lomo.</p>
-          </div>
-        </div>
+  <% end %>
+  <div id="container" class="container">
+    <div id="welcome-picture" class="welcome-picture">
+      <h2>Pomagamy łączyć mamy.</h2>
+      <div id="img-container" class="img-container">
+        <%= image_tag "moms_group.svg" %>
       </div>
     </div>
-    <div id="newsletter" class="newsletter">
-      <h1>Join our community</h1>
-      <p>litz synth craft beer hoodie, air plant slow-carb vape mumblecore etsy. Ugh sriracha poutine shabby chic semiotics. Poutine williamsburg iceland, la croix intelligentsia listicle slow-carb. </p>
-      <%= form_for :newsletter, :url => create_path do |f| %>
-        <%= f.email_field :email, placeholder: 'Type your email here' %>
-        <%= f.submit "Join us" %>
-      <% end %>
+    <div id="form-regiter" class="form-register">
+      <%= render 'partials/form' %>
     </div>
-    <div id="app-user" class="app-user">
-      <div id="container" class="container">
-        <div id="desc" class="desc">
-        <h1>People nearby</h1>
-        <p>Ramps vegan distillery, tote bag venmo tbh snackwave live-edge tattooed asymmetrical brunch vape. Vaporware fingerstache asymmetrical, dreamcatcher pok pok ennui banh mi bespoke hella sartorial tumblr. Crucifix vaporware health goth, vexillologist hoodie tacos authentic next level kale chips coloring book vegan quinoa small batch ennui. Prism skateboard direct trade, microdosing cliche cornhole marfa fanny pack activated charcoal hexagon austin jianbing scenester semiotics brooklyn. Before they sold out subway tile messenger bag, sriracha cred banjo williamsburg umami authentic ennui slow-carb lomo.</p>
-          <div id="stats" class="stats">
-            <div id="total" class="total">
-              <h3>Total users number:</h3>
-              <p><%= User.count %></p>
-            </div>
-            <div id="in-town" class="in-town">
-              <h3>Users in your town:</h3>
-              <p>103</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="map" class="map"></div>
-     </div>
-</main>
+  </div>
+</div>

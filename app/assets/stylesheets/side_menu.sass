@@ -1,23 +1,27 @@
 @import 'colors.sass'
 
 aside
-  background-color: $sub-text
-  padding: 20px 50px
+  background-color: $menu
+  padding: 0px 50px
   max-width: 190px
   min-width: 200px
   min-height: 100%
+  h4
+    font-size: 15pt
+    font-weight: bold
   ul
     list-style: none
     padding: 0
     margin: 0
     margin-bottom: 30px
     li
-      padding: 10px 5px
+      padding: 5px
+      display: flex
       &:before
         display: block
         float: left
-        width: 32px
-        height: 32px
+        width: 24px
+        height: 24px
         margin-right: 7px
         content: ""
         background-size: 18px 18px
@@ -25,7 +29,8 @@ aside
         background-position: center
       &#home:before
         background-image: image-url("svg/home.svg")
-      &#find-mom:before
+      &#find-mom:before,
+      &#find-place:before
         background-image: image-url("svg/search.svg")
       &#mom-nearby:before
         background-image: image-url("svg/place.svg")
@@ -35,9 +40,9 @@ aside
         background-image: image-url("svg/babysiter.svg")
       &#help:before
         background-image: image-url("svg/info.svg")
-      &#add-place:before
-        background-image: image-url("svg/add.svg")
-      &#add-event:before
+      &#add-place:before,
+      &#add-event:before,
+      &#add-social:before
         background-image: image-url("svg/add.svg")
       &#rate-place:before
         background-image: image-url("svg/rating_light.svg")
@@ -46,6 +51,8 @@ aside
       &#log-out:before
         background-image: image-url("svg/logout.svg")
       a
-        vertical-align: sub
-        font-size: .9rem
-        color: $background
+        color: $link
+        align-self: center
+  #logo
+    margin-top: 20px
+    margin-bottom: 20px

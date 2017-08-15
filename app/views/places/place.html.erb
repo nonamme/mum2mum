@@ -1,0 +1,40 @@
+<div id="place" class="place">
+  <aside id="left-side-menu" class="left-side-menu">
+      <%= render 'partials/side_menu' %>
+  </aside>
+  <header>
+    <figure>
+      <%= image_tag @place.image.url.html_safe %>
+      <figcaption>
+        <h1><%= @place.name.html_safe %></h1>
+      </figcaption>
+    </figure>
+    <div id="description">
+      <h3>Opis miejsca</h3>
+      <p><%= @place.description %></p>
+    </div>
+    <div id="open-hours">
+      <h3>Godzina otwarcia</h3>
+      <p><%= @place.open_hours.html_safe %></p>
+    </div>
+    <div id="address">
+      <h3>Address</h3>
+      <p><%= @place.city.html_safe %></p>
+      <p><%= @place.local_no %></p>
+      <p><%= @place.street.html_safe %></p>
+      <p><%= @place.post_code.html_safe %></p>
+      <p><%= link_to @place.link.html_safe, 'http://' + @place.link.html_safe %></p>
+    </div>
+    <div id="upcomming-events">
+      <h3>Nadchodzące wydarzenia</h3>
+      <ul>
+        <% if @place.events.count == 0 %>
+        <li>Nie ma żadnych nadchodzących wydarzeń. Przejdź do <%= link_to "Dodaj wydarzenie", events_new_path %> aby dodać nowe wydarzenie.</li>
+        <% end %>
+        <% @place.events.each do |event| %>
+          <li><%= event.title %></li>
+        <% end %>
+      </ul>
+    </div>
+  </header>
+</div>

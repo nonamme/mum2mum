@@ -6,11 +6,11 @@ class SessionsController < ApplicationController
     user = User.find_by email: params[:sessions][:email]
 
    if user && user.authenticate(params[:sessions][:password])
-      session[:id] = user.id
-      success_login
-    else
-      failed_login
-    end
+    session[:id] = user.id
+    success_login
+   else
+     failed_login
+   end
   end
 
   def destroy
@@ -20,12 +20,12 @@ class SessionsController < ApplicationController
 
   private
     def success_login
-      flash[:notice] = "Successfully logged in"
+      flash[:notice] = "successfully logged in"
       redirect_to show_profile_path session[:id] 
     end
 
     def failed_login
-      flash[:error] = "Invalid combination user/password"
+      flash[:error] = "Invalid username and password."
       redirect_to root_path
     end
 end

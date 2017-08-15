@@ -1,4 +1,11 @@
 <div id="welcome-board" class="welcome-board">
+  <% if flash[:notice] %>
+  <div id="notice" class="notice">
+    <div id="notice" class="notice">
+      <%= flash[:notice] %>
+    </div>
+  </div>
+  <% end %>
   <aside id="left-side-menu" class="left-side-menu">
       <%= render 'partials/side_menu' %>
   </aside>
@@ -9,17 +16,17 @@
       </div>
       <div id="user-data-container" class="user-data-container">
         <div id="address" class="address">
-          <h1><%= @user.name %></h1>
-          <p>Miasto: <%= @user.address.city %></p>
+          <h1><%= @user.name.html_safe %></h1>
+          <p>Miasto: <%= @user.address.city.html_safe %></p>
           <p>Address: <%= @user.address.home_number %>
-          <%= @user.address.street %></p>
-          <p>Kod pocztowy: <%= @user.address.post_code %></p>
-          <p>Email: <%= @user.email %></p>
+          <%= @user.address.street.html_safe %></p>
+          <p>Kod pocztowy: <%= @user.address.post_code.html_safe %></p>
+          <p>Email: <%= @user.email.html_safe %></p>
         </div>
         <div id="social-media" class="social-media">
-          <p>Facebook: <%= link_to @user.name, "https://www.facebook.com/kamilewandowski" %></p>
-          <p>Twitter: <%= link_to @user.name, "https://twitter.com/farnaofficial" %></p>
-          <p>Instagram: <%= link_to @user.name, "https://www.instagram.com/ewa_farna93/" %></p>
+          <p>Facebook: <%= link_to @user.social.facebook.html_safe, "http://facebook.com/" + @user.social.facebook if @user.social.facebook %></p>
+          <p>Twitter: <%= link_to @user.social.twitter.html_safe, "http://twitter.com/" + @user.social.twitter if @user.social.twitter %></p>
+          <p>Instagram: <%= link_to @user.social.instagram.html_safe, "http://instagram.com/" + @user.social.instagram if @user.social.instagram %></p>
         </div>
       </div>
     </div>
@@ -49,8 +56,8 @@
       <div id="comments-container" class="comments-container">
         <% @comments.each do |c| %>
         <div id="comment" class="comment">
-          <p><%= c.user.name %> <span id="date" class="date"><%= c.created_at %></p>
-          <p><%= c.comment %></p>
+          <p><%= c.user.name.html_safe %> <span id="date" class="date"><%= c.created_at %></p>
+          <p><%= c.comment.html_safe %></p>
         </div>
         <% end %>
       </div>

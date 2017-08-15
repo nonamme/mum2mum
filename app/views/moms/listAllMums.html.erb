@@ -10,7 +10,7 @@
       <li>
       <%= image_tag mum.image.url, id: "profile", class: "profile" %>
        <div id="profile" class="profile">
-         <h3><%= "#{truncate mum.name, :length => 16}" %></h3>
+         <h3><%= "#{truncate mum.name.html_safe, :length => 16}" %></h3>
          <%= link_to "Profile |", show_profile_path(mum.id), id: "view-profile", class: "view-profile" %>
          <%= link_to "Comment", show_profile_path(mum.id) + "#comments", id: "comment-profile", class: "comment-profile" %>
          <p><%= mum.status.to_s.capitalize %></p>

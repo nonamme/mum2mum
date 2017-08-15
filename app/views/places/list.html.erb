@@ -1,0 +1,21 @@
+<div id="welcome-board" class="welcome-board">
+  <aside id="left-side-menu" class="left-side-menu">
+      <%= render 'partials/side_menu' %>
+  </aside>
+  <div id="dashboard" class="dashboard">
+    <input type="search" placeholder="Znajdź miejsce" id="find-place-search" class="find-place-search">
+    <ul id="places-list" class="places-list">
+      <% if Place.count == 0 %>
+            <p>Nie ma jeszcze żadnego miejsca. Przejdź do <%= link_to "Dodaj miejsce spotkan", new_place_path %>, aby być pierwszą, która doda nowe super miejsce gdzie będziesz mogła się spotykać z innymi mamami.
+      <% end %>
+    <% Place.all.each do |place| %>
+      <li>
+       <div id="profile" class="profile">
+                  <h3><%= "#{truncate place.name.html_safe, :length => 16}" %></h3>
+         <%= link_to "Miejsce", show_place_path(place.id), id: "view-profile", class: "view-profile" %>
+       </div>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>

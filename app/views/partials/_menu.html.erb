@@ -1,10 +1,8 @@
 <nav>
   <div id="container" class="container">
-  <div id="logo" class="logo">M2M</div>
+    <div id="logo" class="logo">mamuski<span>.org</span></div>
   <div id="wrapper" class="wrapper">
-    <%= link_to "Główna", root_path %>
-    <%= link_to "Zarejestruj się", new_user_path %>
-    <%= link_to "Zaloguj się", login_path %>
+    <%= render 'partials/login_form' %>
   </div>
   </div>
 </nav>
