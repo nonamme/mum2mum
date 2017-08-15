@@ -24,9 +24,9 @@
           <p>Email: <%= @user.email.html_safe %></p>
         </div>
         <div id="social-media" class="social-media">
-          <p>Facebook: <%= link_to @user.social.facebook.html_safe, "http://" + @user.social.facebook %></p>
-          <p>Twitter: <%= link_to @user.social.twitter.html_safe, "http://" + @user.social.twitter %></p>
-          <p>Instagram: <%= link_to @user.social.instagram.html_safe, "http://" + @user.social.instagram %></p>
+          <p>Facebook: <%= link_to @user.social.facebook.html_safe, "http://facebook.com/" + @user.social.facebook if @user.social.facebook %></p>
+          <p>Twitter: <%= link_to @user.social.twitter.html_safe, "http://twitter.com/" + @user.social.twitter if @user.social.twitter %></p>
+          <p>Instagram: <%= link_to @user.social.instagram.html_safe, "http://instagram.com/" + @user.social.instagram if @user.social.instagram %></p>
         </div>
       </div>
     </div>

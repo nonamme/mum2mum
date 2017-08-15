@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "users#index", to: "users/index"
 
   get 'socials/edit'
-  post 'socials/update'
+  patch 'socials/update'
 
   get 'moms/nearby'
   get 'moms/listAllMums', as: 'all'

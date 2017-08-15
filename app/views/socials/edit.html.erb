@@ -6,16 +6,16 @@
     <div id="socials" class="socials">
       <div id="explanation-text">
         <h1>Linki do mediów społecznościowych</h1>
-        <p>W XXI wieku media społecznościowe zalały internet. Ponieważ My nie chcemy być jednym z kolejnych, którzy tylko zbierają wasze zdjęcia, pozwalamy umieścić linki do waszych profili na Waszych ulubioncyh mediach społecznościowych facebook. twitter oraz instagram.</p>
+        <p>W XXI wieku media społecznościowe zalały internet. Ponieważ My nie chcemy być jednym z kolejnych, którzy tylko zbierają wasze zdjęcia, pozwalamy umieścić linki do waszych profili na Waszych ulubioncyh mediach społecznościowych facebook. twitter oraz instagram. Podaj więc nazwe użytkownika której używasz w tych serwisach, aby inni mogli cię poznać.</p>
         <h2>Daj się poznać</h2>
         <p>Wiemy jak ważne jest poznawanie ludzi, chcemy aby przez nasz portal była też taka możliwość. Zdjęcia oraz posty i twitty zamieszane na facebook, instagram czy twitter pomagają. Dodaj linki do tych portali aby inni mogli cię poznać.</p>
         <%= image_tag "svg/socials.svg" %>
       </div>
       <div id="form" class="form">
         <%= form_for @social, url: { controller: 'socials', action: 'update' } do |f| %>
-          <%= f.text_field :facebook, placeholder: "Facebook link" %>
-          <%= f.text_field :twitter, placeholder: "Twitter link" %>
-          <%= f.text_field :instagram, placeholder: "Instagram link" %>
+          <%= f.text_field :facebook, placeholder: "Nazwa użytkownika" %>
+          <%= f.text_field :twitter, placeholder: "Nazwa użytkownika" %>
+          <%= f.text_field :instagram, placeholder: "Nazwa użytkownika" %>
           <%= f.submit "Zmień link" %>
         <% end %>
       </div>
