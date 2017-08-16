@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum status: [:coffee, :shopping, :helpful]
+  enum status: [:coffee, :shopping, :helpful, :status]
 
   has_secure_password
 

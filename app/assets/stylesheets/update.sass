@@ -1,6 +1,6 @@
 @import 'colors.sass'
 
-#update-date
+#update-data
   display: flex
   div
     flex: 1
@@ -31,3 +31,19 @@
       color: $background
     select
       background-color: white
+
+@media screen and (max-width: 500px)
+  div#update-data
+    padding: 20px
+    flex-direction: column
+    div#explanation-text
+      margin: 0px
+      p
+        marign: 0
+    div#update-form-container.update-form
+      form#update-form.update-form
+        margin: 30px 0 10px
+        width: 100%
+        padding: 0
+        select
+          margin: 0 0 10px

@@ -74,3 +74,23 @@ textarea
   color: $background
   span
     font-size: 1.5rem
+#mobile-btn.mobile-btn
+  display: none
+  position: fixed
+  top: 10px
+  right: 10px
+  padding: 10px
+  border-radius: 50%
+  span
+    display: block
+    width: 30px
+    height: 5px
+    margin: 3px
+    border-radius: 5px
+    background-color: darken($white, 10)
+  &:hover
+    background-color: darken($white, 15)
+
+@media screen and (max-width: 500px)
+  #mobile-btn.mobile-btn
+    display: block

@@ -35,3 +35,16 @@
           margin-top: 20px
         input, select
           height: 50px
+
+@media screen and (max-width: 500px)
+  #dashboard
+    #events.events
+      flex-direction: column
+      margin: 50px 20px
+      div
+        &#explanation-text
+          p
+            padding: 0
+        form#new_event
+          select
+            margin: 0
