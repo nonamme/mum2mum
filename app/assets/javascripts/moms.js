@@ -1,7 +1,8 @@
-let search = document.querySelector("input[type='search']");
-let select = document.querySelector("select#status");
+let search = document.querySelector("input[type='search']") || document.createElement('p');
+let select = document.querySelector("select#status") || document.createElement('p');
 
 search.addEventListener('keyup', (e) => {
+
   let list = document.querySelector("#mums-list") || document.querySelector("#places-list")
 
   if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode == 8){
