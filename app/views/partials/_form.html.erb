@@ -2,7 +2,7 @@
 <h2>Zarejestruj się</h2>
 <%= form_for User.new do |f| %>
   <%= f.text_field :name, :placeholder => "Imię i nazwisko (Wymagane)", :required => true %>
-  <%= f.text_field :email, :placeholder => "Email (Wymagane)", :required => true %>
+  <%= f.email_field :email, :placeholder => "Email (Wymagane)", :required => true %>
   <%= f.password_field :password, :placeholder => "Hasło (Wymagane)", :required => true %>
   <%= f.password_field :password_confirmation, :placeholder => "Powtorz hasło (Wymagane)", :required => true %>
   <%= f.fields_for :address, Address.new do |a| %>

@@ -1,6 +1,6 @@
 <%= form_for @user, url: { action: 'update'}, :html => {:id => "update-form", :class => "update-form" } do |f| %>
   <%= f.text_field :name, :placeholder => "Imię i nazwisko (Wymagane)", :required => true %>
-  <%= f.text_field :email, :placeholder => "Email (Wymagane)", :required => true %>
+  <%= f.email_field :email, :placeholder => "Email (Wymagane)", :required => true %>
     <%= f.fields_for :address do |a| %>
       <%= a.text_field :city, :placeholder => "Miasto (Wymagane)", :required => true%>
       <%= a.text_field :street, :placeholder => "Nazwa ulicy" %>
