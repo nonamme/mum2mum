@@ -12,9 +12,9 @@
 <body>
     <%= render 'partials/menu' if session[:id] == nil %>
     <a href='#' id="mobile-btn" class="mobile-btn">
-      <span>&nbsp;</span>
-      <span>&nbsp;</span>
-      <span>&nbsp;</span>
+      <span></span>
+      <span></span>
+      <span></span>
     </a>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
