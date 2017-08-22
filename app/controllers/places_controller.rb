@@ -8,16 +8,16 @@ class PlacesController < ApplicationController
   end
 
   def new
+    @place = Place.new
   end
 
   def create
-    place = Place.new(place_params)
+    @place = Place.new(place_params)
 
-    if place.save
-      @place = Place.last
-      redirect_to 'show_place'
+    if @place.save
+      redirect_to root_path
     else
-      redirect_to 'home'
+      render new_place_path
     end
   end
 

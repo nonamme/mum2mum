@@ -1,3 +1,10 @@
+<% if @place.errors.any? %>
+  <ul>
+    <% @place.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
 <div id="place" class="place">
   <aside id="left-side-menu" class="left-side-menu">
       <%= render 'partials/side_menu' %>
@@ -5,13 +12,12 @@
   <div id="dashboard" class="dashboard">
     <div id="explanation-text">
     <h1>Dodaj nowe miejsce</h1>
-    <p>Dolor magnam esse quasi cupiditate ducimus possimus tenetur recusandae dolor necessitatibus earum, magnam tenetur iste nisi tenetur ratione. Eum velit optio ab molestias odit blanditiis eius, quidem. Repellendus abi Consectetur nam quod aliquam id sit earum enim harum vero nisi velit asperiores obcaecati! Nesciunt vero qui totam ad iure iusto reprehenderit repudiandae exercitationem! Aspernatur modi error ab harum facilis.</p>
-    <p>Amet possimus distinctio illo excepturi veniam quam eius dolor perspiciatis quia officiis necessitatibus? Placeat quidem hic labore sint sint aut ea, sed aperiam esse incidunt consequatur? Fugit totam quod nobis.i Dolor id enim odio provident harum commodi ex maxime aliquam debitis modi impedit, laborum voluptatem. Sint assumenda consequatur maxime possimus alias? Deserunt placeat maxime id ab quidem porro consequuntur? Quia?</p>
-    <p>Elit ratione architecto id magnam nulla quia ullam quis saepe commodi animi? Numquam facere eius reiciendis voluptatum hic, nisi ipsa perferendis itaque non! Dignissimos culpa alias illo optio porro. Temporibus. Ipsum qui amet reiciendis cumque earum libero animi autem accusantium accusamus corrupti, saepe rerum beatae assumenda maxime adipisicing, maxime a laborum quaerat. Accusamus incidunt in iste aspernatur odio ipsa. Hic. </p>
+    <p>Wiesz o jakimś miejscu, które nie istieje jeszcze na naszej liście, a uważasz, że powinno? Dodaj. Podziel się z innymi. Wszystkie miejsca organizują wydarzenie jeśli wiesz o nich możesz je dodać <% link_to "tutaj", events_new_path %>.</p>
+    <p>Chcemy, aby ten portal powstawał dzięki wam i żebyście to Wy brały w tworzeniu go aktywny udział. Dlatego dodawaj miejsca, wydarzenie i twórz portal do którego bedziesz chciała wracać.</p>
     <%= image_tag 'svg/hills.svg' %>
     </div>
     <div id="form" class="form">
-      <%= form_for Place.new do |f| %>
+      <%= form_for @place do |f| %>
         <div>
           <%= f.text_field :name, :placeholder => "Nazwa (Wymagane)" %>
         </div>
