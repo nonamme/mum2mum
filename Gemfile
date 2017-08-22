@@ -10,9 +10,9 @@ end
 gem 'rails'
 gem 'paperclip'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,6 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'rspec'
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
