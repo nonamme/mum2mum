@@ -6,9 +6,6 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :password
       t.timestamps
     end
-
-    add_foreign_key :users, :addresses
-    add_index :users, :id
   end
 
   def down
