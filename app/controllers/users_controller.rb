@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :logged, :only => [:index, :new, :login]
-  before_action :getUsersLocations, :only => [:index, :home]
 
   def index
     @user = @user || User.new
@@ -13,6 +12,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params) 
     if @user.valid?
+      @user.social = Social.new
+      @user.social.save
       @user.save
       success_register_message_redirect_root
     else
@@ -22,8 +23,12 @@ class UsersController < ApplicationController
   end
 
   def error
-    flash[:notice] = "No such a path"
-    redirect_to root_path
+    not_found
+    # render '/public/404.html'
+  end
+
+  def links
+    render 'users/links'
   end
 
   def home
@@ -65,14 +70,6 @@ class UsersController < ApplicationController
     def logged
       if session[:id] != nil
         redirect_to show_profile_path session[:id]
-      end
-    end
-
-    def getUsersLocations
-      @addresses = Address.all
-      @hash = Gmaps4rails.build_markers(@addresses) do |address, marker|
-        marker.lat address.latitude
-        marker.lng address.longitude
       end
     end
 end

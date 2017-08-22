@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   get "/error", to: "users#error"
   get "/login", to: "users#login"
+  get "/links", to: "users#links"
 
   # user home page after login
   get "/home", to: "users#home"
@@ -38,5 +39,6 @@ Rails.application.routes.draw do
 
   post 'newsletter/create' => 'newsletter#create', as: 'create'
 
-  get '*path' => redirect('users/error')
+  get '*path', to: 'users#error'
+
 end
