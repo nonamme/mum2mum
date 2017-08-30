@@ -1,4 +1,4 @@
-let search = document.querySelector("input[type='search']") || document.createElement('p');
+let search = document.querySelector("find-mum-search") || document.createElement('p');
 let select = document.querySelector("select#status") || document.createElement('p');
 
 search.addEventListener('keyup', (e) => {
