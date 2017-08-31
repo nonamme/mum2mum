@@ -8,11 +8,13 @@
 </head>
 <body>
     <%= render 'partials/menu' if session[:id] == nil %>
-    <a href='#' id="mobile-btn" class="mobile-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
+    <% if !current_page? root_path %>
+      <a href='#' id="mobile-btn" class="mobile-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
 </body>
