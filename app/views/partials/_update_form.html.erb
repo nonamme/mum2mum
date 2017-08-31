@@ -9,6 +9,7 @@
       <%= a.text_field :country, value: "United Kingdom", :placeholder => "Państwo" %>
     <% end %>
     <%= f.select :status, User.statuses.collect { |v| [v[0].to_s.capitalize, v[0]] } %>
+    <sub>Zdjęcia użyte tylko do profilu. Mniejsze zdjęcie są lepiej wyświetlane.</sub>
     <%= f.file_field :image %>
   <%= f.submit :value=>"Aktualizuj dane", class: "btn" %>
 <% end %>
