@@ -1,8 +1,8 @@
-let validTextarea= document.querySelector('textarea') || document.createElement('textarea');
-let textInput = document.querySelectorAll("input[type='text']") || document.createElement('input');
-let emailInputs = document.querySelectorAll("input[type='email']") || document.createElement('input');
+var validTextarea= document.querySelector('textarea') || document.createElement('textarea');
+var textInput = document.querySelectorAll("input[type='text']") || document.createElement('input');
+var emailInputs = document.querySelectorAll("input[type='email']") || document.createElement('input');
 
-let oldValue = "";
+var oldValue = "";
 
 emailInputs.forEach(emailInput => {
   emailInput.addEventListener('blur', (e) =>{
@@ -35,7 +35,7 @@ textInput.forEach( input => {
      oldValue = e.target.value;
   } else {
     if( !isOnlyLetters(e.target.value) ){
-     alert("This character is not allowed, please use upper and downcase letters with space between words insted.");
+     alert("This character is not allowed, please use upper and downcase varters with space between words insted.");
      e.target.value = oldValue;
     }
      oldValue = e.target.value;

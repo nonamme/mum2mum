@@ -1,9 +1,9 @@
-let search = document.querySelector("find-mum-search") || document.createElement('p');
-let select = document.querySelector("select#status") || document.createElement('p');
+var search = document.querySelector("find-mum-search") || document.createElement('p');
+var select = document.querySelector("select#status") || document.createElement('p');
 
 search.addEventListener('keyup', (e) => {
 
-  let list = document.querySelector("#mums-list") || document.querySelector("#places-list")
+  var list = document.querySelector("#mums-list") || document.querySelector("#places-list")
 
   if(e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode == 8){
     for(var i = 0; i < list.children.length; i++){
@@ -17,7 +17,7 @@ search.addEventListener('keyup', (e) => {
 }, false);
 
 select.addEventListener('change', (e) => {
-  let mum_status = document.querySelectorAll("#mums-list li");
+  var mum_status = document.querySelectorAll("#mums-list li");
 
   mum_status.forEach((element) => {
     element.style.display = 'list-item';

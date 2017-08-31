@@ -1,13 +1,13 @@
-let email_input = document.querySelector("#login-form #sessions_email");
-let password_input = document.querySelector("#login-form #sessions_password");
+var email_input = document.querySelector("#login-form #sessions_email");
+var password_input = document.querySelector("#login-form #sessions_password");
 
-let inputs = [email_input, password_input];
+var inputs = [email_input, password_input];
 
-let mobile = document.querySelector(".mobile-btn");
+var mobile = document.querySelector(".mobile-btn");
 
 mobile.addEventListener('click', (e) => {
   e.preventDefault();
-  let side = document.querySelector('aside');
+  var side = document.querySelector('aside');
 
   side.classList.toggle('menu-in');
   console.log(side.classList);
