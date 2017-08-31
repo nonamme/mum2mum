@@ -5,23 +5,22 @@ var inputs = [email_input, password_input];
 
 var mobile = document.querySelector(".mobile-btn");
 
-mobile.addEventListener('click', (e) => {
+mobile.addEventListener('click', function(e){
   e.preventDefault();
   var side = document.querySelector('aside');
 
   side.classList.toggle('menu-in');
-  console.log(side.classList);
 });
 
 (function(fields){
-  fields.forEach((field) => {
+  fields.forEach(function(field){
     if(!field) return;
 
-    field.addEventListener('click', (e) => {
+    field.addEventListener('click', function(e){
       e.target.value = "";
     });
 
-    field.addEventListener('blur', (e) => {
+    field.addEventListener('blur', function(e){
       if (e.target.value == '')
         e.target.value = 'Email';
     });

@@ -4,8 +4,8 @@ var emailInputs = document.querySelectorAll("input[type='email']") || document.c
 
 var oldValue = "";
 
-emailInputs.forEach(emailInput => {
-  emailInput.addEventListener('blur', (e) =>{
+emailInputs.forEach(function(emailInput){
+  emailInput.addEventListener('blur', function(e){
     if (!isValidEmail(e.target.value)){
       alert("This is not an email!");
       e.target.value = oldValue;
@@ -13,8 +13,11 @@ emailInputs.forEach(emailInput => {
   });
 });
 
-validTextarea.addEventListener('blur', () =>  oldValue = '');
-validTextarea.addEventListener('keyup', (e) => {
+validTextarea.addEventListener('blur', function(){ 
+  oldValue = '';
+});
+
+validTextarea.addEventListener('keyup', function(e){
 
   if( /\'/.test(e.target.value)){
     alert("This character (') is not allowed, please use double quotes(\") insted.");
@@ -23,10 +26,12 @@ validTextarea.addEventListener('keyup', (e) => {
   oldValue = e.target.value;
 });
 
-textInput.forEach( input => {
-  input.addEventListener('blur', () =>  oldValue = '');
+textInput.forEach( function(input){
+  input.addEventListener('blur', function(){
+    oldValue = '';
+  });
 
-  input.addEventListener('keyup', (e) => {
+  input.addEventListener('keyup', function(e){
   if (isPostcodeField(e.target.id) ){
     if(!isValidPostcode(e.target.value)){
      alert("Is not valid character for POSTCODE!");

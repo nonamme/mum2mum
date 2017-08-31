@@ -1,7 +1,7 @@
 var search = document.querySelector("find-mum-search") || document.createElement('p');
 var select = document.querySelector("select#status") || document.createElement('p');
 
-search.addEventListener('keyup', (e) => {
+search.addEventListener('keyup', function(e){
 
   var list = document.querySelector("#mums-list") || document.querySelector("#places-list")
 
@@ -16,10 +16,10 @@ search.addEventListener('keyup', (e) => {
   } 
 }, false);
 
-select.addEventListener('change', (e) => {
+select.addEventListener('change', function(e) => {
   var mum_status = document.querySelectorAll("#mums-list li");
 
-  mum_status.forEach((element) => {
+  mum_status.forEach(function(element){
     element.style.display = 'list-item';
    if(element.querySelector('p').textContent.toLowerCase() != e.target.value.toLowerCase()){
     element.style.display = 'none';
