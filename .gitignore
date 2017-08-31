@@ -11,6 +11,7 @@ capybara-*.html
 /db/migrate/* 
 /public/system
 /public
+/public/assets/**
 /coverage/
 /spec/tmp
 *.orig
