@@ -16,7 +16,7 @@ search.addEventListener('keyup', function(e){
   } 
 }, false);
 
-select.addEventListener('change', function(e) => {
+select.addEventListener('change', function(e){
   var mum_status = document.querySelectorAll("#mums-list li");
 
   mum_status.forEach(function(element){
