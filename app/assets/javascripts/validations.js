@@ -62,6 +62,3 @@ function isPostcodeField(field){
 function isValidEmail(email){
   return /^(.+)@(.+)$/.test(email);
 }
-
-// Links Validation
-// Date validation?
