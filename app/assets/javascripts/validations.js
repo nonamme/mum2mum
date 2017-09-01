@@ -6,9 +6,12 @@ var oldValue = "";
 
 emailInputs.forEach(function(emailInput){
   emailInput.addEventListener('blur', function(e){
-    if (!isValidEmail(e.target.value)){
+    oldValue = e.target.value;
+    if ( e.target.value != "" && !isValidEmail(e.target.value)){
       alert("This is not an email!");
       e.target.value = oldValue;
+    } else if(e.target.value == "") {
+      return;
     }
   });
 });
@@ -32,6 +35,10 @@ textInput.forEach( function(input){
   });
 
   input.addEventListener('keyup', function(e){
+  if ( /_link/.test(e.target.id)){
+    return;
+  }
+
   if (isPostcodeField(e.target.id) ){
     if(!isValidPostcode(e.target.value)){
      alert("Is not valid character for POSTCODE!");
@@ -39,8 +46,9 @@ textInput.forEach( function(input){
     }
      oldValue = e.target.value;
   } else {
-    if( !isOnlyLetters(e.target.value) ){
-     alert("This character is not allowed, please use upper and downcase varters with space between words insted.");
+    if( !isAlphanumeric(e.target.value) ){
+      console.log(e);
+     alert("This character is not allowed, please use upper and downcase characters with space between words instead.");
      e.target.value = oldValue;
     }
      oldValue = e.target.value;
@@ -57,7 +65,7 @@ function isOnlyLetters(string){
 }
 
 function isAlphanumeric(string){
-  return /^[A-Za-z0-9]*$/.test(string);
+  return /^[A-Za-z0-9 ]*$/.test(string);
 }
 
 function isPostcodeField(field){
