@@ -6,7 +6,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    if Event.create event_params
+    event = Event.new event_params
+    if event.save
       redirect_to show_profile_path session[:id]
     else
       redirect_to events_new_path
