@@ -18,11 +18,18 @@ search.addEventListener('keyup', function(e){
 
 select.addEventListener('change', function(e){
   var mum_status = document.querySelectorAll("#mums-list li");
+  if(e.target.value.toLowerCase() != "wszystkie mamuśki"){
 
   mum_status.forEach(function(element){
     element.style.display = 'list-item';
-   if(element.querySelector('p').textContent.toLowerCase() != e.target.value.toLowerCase()){
-    element.style.display = 'none';
-   }
+     if(element.querySelector('p').textContent.toLowerCase() != e.target.value.toLowerCase()){
+      element.style.display = 'none';
+     }
   })
+  } else {
+    mum_status.forEach(function(element){
+      element.style.display = 'list-item';
+    })
+  }
+  console.log(e.target.value.toLowerCase());
 }, false);
