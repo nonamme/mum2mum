@@ -10,6 +10,7 @@ ruby '2.2.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 gem 'paperclip'
+gem 'aws-sdk', '<2.0'
 
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
