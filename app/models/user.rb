@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_attached_file :image, :style => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => '/images/:style/avatar.png'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-  enum status: [:coffee, :shopping, :helpful, :status]
+  enum status: ["Wszystkie Mamuśki", "Mamusia na kawę", "Mamusia na shopping", "Mamusia do pomocy", "Mamusia na spacer", "Mamusia na pogaduchy"]
 
   has_secure_password
 
