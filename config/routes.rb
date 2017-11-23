@@ -31,13 +31,10 @@ Rails.application.routes.draw do
   get "/login", to: "users#login"
   get "/links", to: "users#links"
 
-  # user home page after login
   get "/home", to: "users#home"
 
   resources :users, :path => '', except: [:update]
   patch 'users/:id', to: 'users#update', as: 'update'
-
-  post 'newsletter/create' => 'newsletter#create', as: 'create'
 
   get '*path', to: 'users#error'
 
