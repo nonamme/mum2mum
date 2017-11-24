@@ -1,41 +1,20 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :controller do
-  describe "GET index" do
-    render_views
-    it "has a 200 status" do
-      get :index
-      expect(response.status).to eq(200)
-    end
+# RSpec.describe UsersController, type: :controller do
+feature 'Visitor signs up' do
+  scenario 'with valid email and password' do
+    visit '/'
 
-    it "reneds index view" do
-      get :index
-      expect(response).to render_template("index")
-    end
-  end
-  
-  describe "GET login form" do
-    render_views
-    before :each do
-      get :new
-    end
+    expect(page).to have_field ('sessions_email')
+    expect(page).to have_field ('sessions_password')
 
-    it "go to login form" do
-      expect(response.status).to eq(200)
-    end
+    page.fill_in 'sessions_email', with: 'kamil@yahoo.com'
+    page.fill_in 'sessions_email', with: 'zaq12wsx'
 
-    it "get the form" do
-      expect(response.body).to match /form/
-    end
-  end
+    expect(page).to have_button('Zaloguj się')
 
-  describe "POST create user" do
-    render_views
-    before :each do
-      post :create, params: { :user => { :name => "Test", :email => "test@test.com"}}
-    end
-    it "redirect to index page" do
-      expect(response).to have_http_status (302)
-    end
+    page.click_button('Zaloguj się')
+
+    expect(page).to have_content "Log out"
   end
 end

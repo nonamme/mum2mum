@@ -13,8 +13,11 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :address
 
+  def address
+    super || build_address
+  end
   # validates :name, presence: true, length: { minimum: 3 }
-  # validates_associated :address
+#  validates_associated :address
   # validates :password, confirmation: true, length: { in: 6..20 }, on: create
   # validates :email, presence: true, format: { with: /\A.+@.+\z/}, uniqueness: true
 end
