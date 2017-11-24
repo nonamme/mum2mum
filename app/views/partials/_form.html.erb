@@ -1,11 +1,11 @@
 <div id="reg-form" class="reg-form">
 <h2>Zarejestruj się</h2>
-<%= form_for User.new do |f| %>
+<%= form_for @user do |f| %>
   <%= f.text_field :name, :placeholder => "Imię i nazwisko (Wymagane)", :required => true %>
   <%= f.email_field :email, :placeholder => "Email (Wymagane)", :required => true %>
   <%= f.password_field :password, :placeholder => "Hasło (Wymagane)", :required => true %>
   <%= f.password_field :password_confirmation, :placeholder => "Powtorz hasło (Wymagane)", :required => true %>
-  <%= f.fields_for :address, Address.new do |a| %>
+  <%= f.fields_for :address, @user.address do |a| %>
     <%= a.text_field :city, :placeholder => "Miasto (Wymagane)", :required => true %>
     <%= a.text_field :street, :placeholder => "Nazwa ulicy" %>
     <%= a.number_field :home_number, :placeholder => "Numer mieszkania", :min => 0 %>

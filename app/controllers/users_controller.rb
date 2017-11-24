@@ -7,13 +7,13 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.build_address
   end
 
   def create
     @user = User.new(user_params) 
     if @user.valid?
       @user.social = Social.new
-      @user.social.save
       @user.save
       success_register_message_redirect_root
     else
@@ -53,8 +53,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:id, :name, :email, :password, :password_confirmation, :status, :image,
-                                   address_attributes: [:id, :city, :street, :home_number, :post_code, :country])
+      params.require(:user).permit(:id, :name, :email, :password, :password_confirmation, :status, :image, :address_attributes => [:id, :city, :street, :home_number, :post_code, :country])
     end
 
     def success_register_message_redirect_root

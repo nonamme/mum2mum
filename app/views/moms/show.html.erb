@@ -17,10 +17,10 @@
       <div id="user-data-container" class="user-data-container">
         <div id="address" class="address">
           <h1><%= @user.name.html_safe %></h1>
-          <p>Miasto: <%= @user.address.city.html_safe %></p>
-          <p>Address: <%= @user.address.home_number %>
-          <%= @user.address.street.html_safe %></p>
-          <p>Kod pocztowy: <%= @user.address.post_code.html_safe %></p>
+          <p>Miasto: <%= @user.address.city.html_safe if @user.address.city %></p>
+          <p>Address: <%= @user.address.home_number if @user.address.home_number %>
+          <%= @user.address.street.html_safe if @user.address.street %></p>
+          <p>Kod pocztowy: <%= @user.address.post_code.html_safe if @user.address.post_code %></p>
           <p>Email: <%= @user.email.html_safe %></p>
         </div>
         <div id="social-media" class="social-media">
